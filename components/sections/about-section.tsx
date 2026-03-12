@@ -3,8 +3,8 @@ import { Container } from "@/components/ui/container";
 
 export function AboutSection() {
   return (
-    <section className="px-5 pb-5">
-      <div className="min-h-[calc(100vh-40px)] rounded-[2rem] text-[#151515]">
+    <section className="bg-[var(--color-bg)] px-5 pb-5">
+      <div className="min-h-[calc(100vh-40px)] rounded-[2rem] bg-[var(--color-bg)] text-[#151515]">
         <Container className="flex min-h-[calc(100vh-40px)] items-center justify-center py-20">
           <div className="mx-auto max-w-4xl text-center">
             <Reveal>

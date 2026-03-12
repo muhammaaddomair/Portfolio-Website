@@ -28,8 +28,8 @@ export function HomeHero() {
           >
             <source src="/backgrounds/hero2.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.72)_0%,rgba(0,0,0,0.36)_42%,rgba(0,0,0,0.22)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,132,44,0.18),transparent_30%),linear-gradient(180deg,rgba(22,6,0,0.28)_0%,rgba(0,0,0,0.18)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.48)_42%,rgba(0,0,0,0.3)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.06),transparent_28%),linear-gradient(180deg,rgba(6,6,6,0.34)_0%,rgba(0,0,0,0.22)_100%)]" />
           <div className="relative grid h-full gap-6 lg:grid-cols-[0.98fr,1.02fr] lg:items-center">
             <div className="mx-auto flex w-full max-w-2xl items-center self-center pt-24 md:pt-28">
               <div>

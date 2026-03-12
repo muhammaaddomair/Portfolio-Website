@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 export default function AboutPage() {
   return (
     <section className="p-5">
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b] pb-20">
+      <div className="relative overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-card)] pb-20">
         <Header />
         <Container className="pt-28">
           <PageHero
@@ -19,8 +19,11 @@ export default function AboutPage() {
               "Backend and automation thinking grounded in execution",
               "Independent consulting without agency overhead"
             ].map((item) => (
-              <div key={item} className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-8">
-                <p className="text-lg font-semibold text-white">{item}</p>
+              <div
+                key={item}
+                className="rounded-[1.5rem] border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-card)_82%,transparent)] p-8"
+              >
+                <p className="text-lg font-semibold text-[var(--color-text)]">{item}</p>
               </div>
             ))}
           </div>

@@ -9,7 +9,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="p-5">
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b] pb-20">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-card)] pb-20">
           <Header />
           <Container className="pt-28">
             <PageHero
