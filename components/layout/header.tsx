@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { navItems, siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -79,21 +80,13 @@ export function Header() {
               </span>
             </span>
           </button>
-          <Link
-            href="/contact"
-            className="header-pill pp-mono gap-3 px-5 py-3 text-sm uppercase tracking-[0.14em] transition-transform duration-300 hover:-translate-y-0.5"
-          >
-            <span className="header-text-wrap">
-              <span className="header-text-track">
-                <span className="header-text-line">Start a Project</span>
-                <span className="header-text-line">Start a Project</span>
-              </span>
-            </span>
+          <Button href="/contact" className="gap-3 px-5 py-3 text-sm">
+            Start a Project
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
               <path d="M5 12h12" />
               <path d="m13 7 5 5-5 5" />
             </svg>
-          </Link>
+          </Button>
         </div>
       </div>
     </motion.header>

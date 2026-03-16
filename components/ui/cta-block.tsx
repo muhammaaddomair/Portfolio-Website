@@ -35,7 +35,7 @@ export function CtaBlock({
               <Button href={primaryHref}>
                 {primaryLabel}
               </Button>
-              <Button href={secondaryHref} variant="secondary">
+              <Button href={secondaryHref}>
                 {secondaryLabel}
               </Button>
             </div>

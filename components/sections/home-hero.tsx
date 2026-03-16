@@ -14,7 +14,7 @@ export function HomeHero() {
         <Header />
         <motion.div
           variants={staggerContainer}
-          initial="hidden"
+          initial={false}
           animate="visible"
           className="relative h-full overflow-hidden px-5 pb-10 pt-32 md:px-6 md:pb-12 md:pt-32"
         >
@@ -54,14 +54,10 @@ export function HomeHero() {
                   for companies that need technical authority, clarity, and execution at a premium level.
                 </motion.p>
                 <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
-                  <Button href="/projects" className="bg-white text-[#101010] hover:bg-[#f2ece4]">
+                  <Button href="/projects">
                     View Projects
                   </Button>
-                  <Button
-                    href="/contact"
-                    variant="secondary"
-                    className="border-white/20 bg-black text-white hover:border-white/40 hover:text-white"
-                  >
+                  <Button href="/contact">
                     Get In Touch
                   </Button>
                 </motion.div>

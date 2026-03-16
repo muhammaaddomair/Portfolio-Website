@@ -190,3 +190,24 @@ textarea::placeholder {
     @apply flex h-4 items-center;
   }
 }
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.logo-marquee-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: logo-marquee 28s linear infinite;
+}

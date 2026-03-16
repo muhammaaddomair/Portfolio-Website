@@ -15,7 +15,7 @@ export function Reveal({ children, delay = 0, className }: RevealProps) {
     <motion.div
       variants={fadeUp}
       custom={delay}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       className={className}
