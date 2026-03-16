@@ -42,7 +42,7 @@ const serviceTabs: ServiceTab[] = [
     description:
       "Custom web platforms, dashboards, SaaS systems, and scalable digital products designed for serious growth environments.",
     details: ["Product architecture", "User dashboards", "Billing-ready flows"],
-    image: "/images/imac-png.png",
+    image: "/service/service1-img.png",
     icon: "screen"
   },
   {
@@ -52,7 +52,7 @@ const serviceTabs: ServiceTab[] = [
     description:
       "Custom CMS systems and internal operational tools tailored to structured workflows, content governance, and team execution.",
     details: ["Admin systems", "Operational tooling", "Content workflows"],
-    image: "/images/imac-png.png",
+    image: "/service/service-img2.png",
     icon: "cms"
   },
   {
@@ -99,7 +99,7 @@ const reveal = {
 function ServiceIcon({ kind }: { kind: ServiceTab["icon"] }) {
   if (kind === "screen") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3.5" y="5" width="17" height="11.5" rx="2.5" />
         <path d="M7.5 9h9" />
         <path d="M8.5 19h7" />
@@ -110,7 +110,7 @@ function ServiceIcon({ kind }: { kind: ServiceTab["icon"] }) {
 
   if (kind === "cms") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="4" width="16" height="16" rx="3" />
         <path d="M8 8.5h8" />
         <path d="M8 12h8" />
@@ -122,7 +122,7 @@ function ServiceIcon({ kind }: { kind: ServiceTab["icon"] }) {
 
   if (kind === "desktop") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="4.5" width="16" height="10.5" rx="2.2" />
         <path d="M9.5 19h5" />
         <path d="M12 15.5V19" />
@@ -133,7 +133,7 @@ function ServiceIcon({ kind }: { kind: ServiceTab["icon"] }) {
 
   if (kind === "backend") {
     return (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="12" cy="6.5" rx="6.5" ry="2.7" />
         <path d="M5.5 6.5v5c0 1.5 2.9 2.7 6.5 2.7s6.5-1.2 6.5-2.7v-5" />
         <path d="M5.5 11.5v5c0 1.5 2.9 2.7 6.5 2.7s6.5-1.2 6.5-2.7v-5" />
@@ -142,7 +142,7 @@ function ServiceIcon({ kind }: { kind: ServiceTab["icon"] }) {
   }
 
   return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.85" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="3.8" />
       <path d="M12 2.8v3.4" />
       <path d="M12 17.8v3.4" />
@@ -172,8 +172,8 @@ export function ServicesSkillsSection() {
           <div className="px-6 py-10 md:px-10 md:py-12">
             <div className="flex flex-col items-center gap-8 text-center">
               <div className="max-w-4xl">
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[12px] text-[#666666] shadow-[0_12px_30px_rgba(17,17,17,0.05)]">
-                  <span className="grid h-5 w-5 place-items-center rounded-full text-[#111111]">
+                <div className="inline-flex items-center gap-2 rounded-full bg-[#FE5A37] px-4 py-2 text-[12px] text-white shadow-[0_12px_30px_rgba(17,17,17,0.05)]">
+                  <span className="grid h-5 w-5 place-items-center rounded-full text-white">
                     <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="m8 14 8-8" />
                       <path d="M10 6h6v6" />
@@ -189,13 +189,6 @@ export function ServicesSkillsSection() {
                 </p>
               </div>
 
-              <Button href="/contact" size="lg" className="gap-3 px-7 py-4 text-base normal-case tracking-normal">
-                Explore More
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h12" />
-                  <path d="m13 7 5 5-5 5" />
-                </svg>
-              </Button>
             </div>
           </div>
 
@@ -214,10 +207,10 @@ export function ServicesSkillsSection() {
                   >
                     <div
                       className={cn(
-                        "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+                        "flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
                         isActive
-                          ? "bg-white text-[#FE5A37]"
-                          : "bg-transparent text-[#6f655c]"
+                          ? "bg-[#ffe4dc] text-[#FE5A37]"
+                          : "bg-[#f3ece4] text-[#6f655c]"
                       )}
                     >
                       <ServiceIcon kind={tab.icon} />
@@ -239,7 +232,7 @@ export function ServicesSkillsSection() {
             >
               <div className="flex flex-col justify-between">
                 <div>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full text-[#111111]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#ffe4dc] text-[#FE5A37]">
                     <ServiceIcon kind={currentTab.icon} />
                   </div>
                   <h3 className="mt-10 text-4xl font-semibold tracking-[-0.05em] text-[#111111] md:text-6xl">{currentTab.title}</h3>
@@ -271,9 +264,6 @@ export function ServicesSkillsSection() {
 
               <div className="flex items-center justify-center md:pl-8">
                 <div className="relative w-full max-w-[320px] overflow-hidden rounded-[1.6rem] p-3 shadow-[0_22px_44px_rgba(17,17,17,0.08)]">
-                  <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),transparent_24%,transparent_76%,rgba(255,255,255,0.1))]" />
-                  <div className="pointer-events-none absolute inset-0 z-20 bg-[linear-gradient(90deg,transparent_0%,transparent_32%,rgba(255,255,255,0.45)_32.8%,rgba(255,255,255,0.45)_33.5%,transparent_34.2%,transparent_65.8%,rgba(255,255,255,0.45)_66.5%,rgba(255,255,255,0.45)_67.2%,transparent_68%)]" />
-                  <div className="pointer-events-none absolute inset-0 z-20 bg-[linear-gradient(180deg,transparent_0%,transparent_21%,rgba(255,255,255,0.45)_21.8%,rgba(255,255,255,0.45)_22.5%,transparent_23.2%,transparent_49%,rgba(255,255,255,0.45)_49.8%,rgba(255,255,255,0.45)_50.5%,transparent_51.2%,transparent_77%,rgba(255,255,255,0.45)_77.8%,rgba(255,255,255,0.45)_78.5%,transparent_79.2%)]" />
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[1.2rem]">
                     <Image
                       src={currentTab.image}

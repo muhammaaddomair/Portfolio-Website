@@ -57,7 +57,7 @@ export function HomeHero() {
                   <Button href="/projects">
                     View Projects
                   </Button>
-                  <Button href="/contact">
+                  <Button href="/contact" className="!bg-[#FE5A37] !text-white hover:!bg-white hover:!text-[#111111]">
                     Get In Touch
                   </Button>
                 </motion.div>

@@ -81,7 +81,12 @@ export function Header() {
             </span>
           </button>
           <Button href="/contact" className="gap-3 px-5 py-3 text-sm">
-            Start a Project
+            <span className="header-text-wrap">
+              <span className="header-text-track">
+                <span className="header-text-line">Start a Project</span>
+                <span className="header-text-line">Start a Project</span>
+              </span>
+            </span>
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
               <path d="M5 12h12" />
               <path d="m13 7 5 5-5 5" />
