@@ -60,9 +60,6 @@ export function Footer({ embedded = false }: FooterProps) {
             </span>
             <div>
               <p className="text-base font-semibold tracking-tight">{siteConfig.name}</p>
-              <p className="pp-mono text-[11px] uppercase tracking-[0.18em] text-white/55">
-                Independent consulting practice
-              </p>
             </div>
           </div>
 
