@@ -250,7 +250,7 @@ export function ServicesSkillsSection() {
                 </div>
 
                 <div className="mt-10">
-                  <Button href="/contact" className="gap-3 px-6 py-3 normal-case tracking-normal">
+                  <Button href="/#contact" className="gap-3 px-6 py-3 normal-case tracking-normal">
                     Let&apos;s Chat
                     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
                       <path d="M7 8.5h10" />

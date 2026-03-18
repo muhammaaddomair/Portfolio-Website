@@ -9,14 +9,14 @@ import { siteConfig } from "@/lib/site";
 
 export function HomeHero() {
   return (
-    <section className="p-5">
-      <div className="relative h-[calc(100vh-40px)] overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_30px_80px_rgba(0,0,0,0.36)]">
+    <section id="home" className="scroll-mt-24 p-3 sm:p-5">
+      <div className="relative min-h-[calc(100svh-24px)] overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_30px_80px_rgba(0,0,0,0.36)] sm:min-h-[calc(100svh-40px)] md:h-[calc(100vh-40px)]">
         <Header />
         <motion.div
           variants={staggerContainer}
           initial={false}
           animate="visible"
-          className="relative h-full overflow-hidden px-5 pb-10 pt-32 md:px-6 md:pb-12 md:pt-32"
+          className="relative h-full overflow-hidden px-4 pb-8 pt-24 sm:px-5 sm:pb-10 sm:pt-28 md:px-6 md:pb-12 md:pt-32"
         >
           <video
             className="absolute inset-0 h-full w-full object-cover"
@@ -31,7 +31,7 @@ export function HomeHero() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.48)_42%,rgba(0,0,0,0.3)_100%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.06),transparent_28%),linear-gradient(180deg,rgba(6,6,6,0.34)_0%,rgba(0,0,0,0.22)_100%)]" />
           <div className="relative grid h-full gap-6 lg:grid-cols-[0.98fr,1.02fr] lg:items-center">
-            <div className="mx-auto flex w-full max-w-2xl items-center self-center pt-24 md:pt-28">
+            <div className="mx-auto flex w-full max-w-2xl items-center self-center pt-14 sm:pt-20 md:pt-28">
               <div>
                 <motion.p
                   variants={fadeUp}
@@ -43,25 +43,25 @@ export function HomeHero() {
                 </motion.p>
                 <motion.h1
                   variants={fadeUp}
-                  className="mt-8 text-5xl font-semibold uppercase leading-[0.92] tracking-[-0.04em] text-white md:text-7xl"
+                  className="mt-6 text-4xl font-semibold uppercase leading-[0.92] tracking-[-0.04em] text-white sm:text-5xl md:mt-8 md:text-7xl"
                 >
                   Systems
                   <br />
                   That Scale
                 </motion.h1>
-                <motion.p variants={fadeUp} className="mt-8 max-w-xl text-lg leading-8 text-white">
+                <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-7 text-white sm:text-lg sm:leading-8 md:mt-8">
                   {siteConfig.name} designs high-leverage digital platforms, backend systems, and automation architecture
                   for companies that need technical authority, clarity, and execution at a premium level.
                 </motion.p>
-                <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
-                  <Button href="/projects">
+                <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
+                  <Button href="/#projects" className="w-full justify-center sm:w-auto">
                     View Projects
                   </Button>
-                  <Button href="/contact" className="!bg-[#FE5A37] !text-white hover:!bg-white hover:!text-[#111111]">
-                    Get In Touch
+                  <Button href="/cv" className="w-full justify-center !bg-[#FE5A37] !text-white hover:!bg-white hover:!text-[#111111] sm:w-auto">
+                    View My Resume
                   </Button>
                 </motion.div>
-                <motion.p variants={fadeUp} className="mt-24 text-sm font-medium text-white">
+                <motion.p variants={fadeUp} className="mt-14 text-sm font-medium text-white sm:mt-20 md:mt-24">
                   Scroll for more
                 </motion.p>
               </div>

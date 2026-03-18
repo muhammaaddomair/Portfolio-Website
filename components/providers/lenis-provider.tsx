@@ -10,7 +10,7 @@ type LenisProviderProps = {
 export function LenisProvider({ children }: LenisProviderProps) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 0.7,
       smoothWheel: true
     });
 

@@ -1,8 +1,8 @@
 export const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" }
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" }
 ];
 
 export const siteConfig = {
@@ -10,7 +10,18 @@ export const siteConfig = {
   title: "Digital Systems Architect & Automation Engineer",
   tagline:
     "Designing scalable software platforms, infrastructure systems, and intelligent automation solutions for modern businesses.",
-  email: "hello@muhammadomair.com"
+  email: "muhammaddomair@gmail.com",
+  phone: "+92 300 123 4567",
+  socialLinks: {
+    github: "https://github.com/muhammaaddomair",
+    linkedin: "#",
+    indeed: "#",
+    x: "#",
+    fiverr: "#",
+    upwork: "#",
+    whatsapp: "https://wa.me/923001234567",
+    telegram: "#"
+  }
 };
 
 export const featuredProjects = [

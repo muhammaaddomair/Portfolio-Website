@@ -3,28 +3,28 @@ import { Container } from "@/components/ui/container";
 
 export function AboutSection() {
   return (
-    <section className="bg-[#f6ead8] px-5 pb-5">
+    <section id="about" className="scroll-mt-24 bg-[#f6ead8] px-5 pb-5">
       <div className="min-h-[calc(100vh-40px)] rounded-[2rem] bg-[#f6ead8] text-[#151515]">
-        <Container className="flex min-h-[calc(100vh-40px)] items-center justify-center py-20">
+        <Container className="flex min-h-[calc(100vh-40px)] items-center justify-center py-14 sm:py-16 md:py-20">
           <div className="mx-auto max-w-4xl text-center">
             <Reveal>
               <div className="mb-6 flex flex-col items-center">
-                <h2 className="pp-mono text-[80px] font-normal uppercase leading-[1] tracking-[-0.04em] text-black [text-shadow:0_-10px_28px_rgba(254,90,55,0.28),0_0_12px_rgba(254,90,55,0.18)]">
+                <h2 className="pp-mono text-4xl font-normal uppercase leading-[1] tracking-[-0.04em] text-black [text-shadow:0_-10px_28px_rgba(254,90,55,0.28),0_0_12px_rgba(254,90,55,0.18)] sm:text-6xl md:text-[80px]">
                   About Me
                 </h2>
-                <div className="relative mt-2 h-1.5 w-44 rounded-full bg-[#FE5A37] shadow-[0_0_14px_rgba(254,90,55,0.92),0_0_34px_rgba(254,90,55,0.62),0_-12px_36px_rgba(254,90,55,0.22)]">
-                  <div className="absolute left-1/2 top-1/2 h-14 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FE5A37]/45 blur-3xl" />
+                <div className="relative mt-2 h-1.5 w-28 rounded-full bg-[#FE5A37] shadow-[0_0_14px_rgba(254,90,55,0.92),0_0_34px_rgba(254,90,55,0.62),0_-12px_36px_rgba(254,90,55,0.22)] sm:w-36 md:w-44">
+                  <div className="absolute left-1/2 top-1/2 h-10 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FE5A37]/45 blur-3xl sm:h-12 sm:w-52 md:h-14 md:w-60" />
                 </div>
               </div>
             </Reveal>
             <Reveal delay={0.04}>
-              <p className="mx-auto max-w-3xl text-2xl font-semibold leading-[1.45] text-black">
+              <p className="mx-auto max-w-3xl text-lg font-semibold leading-[1.45] text-black sm:text-xl md:text-2xl">
                 I design software systems, automation workflows, and digital infrastructure that help modern businesses
                 operate with more clarity and scale.
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mx-auto mt-8 max-w-3xl space-y-6 text-lg leading-8 text-black">
+              <div className="mx-auto mt-6 max-w-3xl space-y-5 text-base leading-7 text-black sm:mt-8 sm:text-lg sm:leading-8">
                 <p>
                 My work sits at the intersection of product engineering, backend architecture, and process automation.
                 I focus on building systems that are commercially useful, technically durable, and easier for teams to

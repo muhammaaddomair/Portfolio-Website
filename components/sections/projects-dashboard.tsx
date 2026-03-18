@@ -54,11 +54,11 @@ export function ProjectsDashboard() {
   const repoHref = activeProject.repoUrl ?? "#";
 
   return (
-    <section className="bg-white px-5 pb-24 pt-14">
+    <section id="projects" className="scroll-mt-24 bg-white px-3 pb-16 pt-12 sm:px-5 sm:pb-20 md:pb-24 md:pt-14">
       <Container>
-        <div className="space-y-8 text-center md:space-y-10">
+        <div className="space-y-7 text-center md:space-y-10">
           <Reveal>
-            <h2 className="pp-mono text-4xl font-black  uppercase  text-black md:text-6xl">
+            <h2 className="pp-mono text-3xl font-black uppercase text-black sm:text-4xl md:text-6xl">
               Explore Projects
             </h2>
           </Reveal>

@@ -15,9 +15,9 @@ export function CtaBlock({
   title = "Discuss your system",
   description = "For product infrastructure, automation strategy, or architecture-led delivery, start with a focused conversation about scope, constraints, and business outcomes.",
   primaryLabel = "Start a Project",
-  primaryHref = "/contact",
+  primaryHref = "/#contact",
   secondaryLabel = "View Projects",
-  secondaryHref = "/projects"
+  secondaryHref = "/#projects"
 }: CtaBlockProps) {
   return (
     <section className="py-20 md:py-28">
