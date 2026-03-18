@@ -140,5 +140,20 @@ export const projects: ProjectItem[] = [
     image: "/backgrounds/hero1.mp4",
     liveUrl: "https://yohananmateuslaw.com/",
     repoUrl: "https://github.com/muhammaaddomair/yohana-mateus-law"
+  },
+  {
+    id: "zentro-solutions-website",
+    title: "Zentro Solutions Website",
+    category: "Website Development",
+    subtitle: "Business Website",
+    description:
+      "A modern business website built to present services clearly, strengthen brand credibility, and guide visitors toward direct inquiries and conversion paths.",
+    client: "Zentro Solutions",
+    solution: "Business website with clear service positioning",
+    result: "Stronger digital presence, clearer offer communication, and improved lead readiness",
+    techStack: ["Next.js", "Tailwind CSS", "Node.js", "TypeScript"],
+    features: ["Service presentation", "Business credibility sections", "Lead-focused conversion flow"],
+    image: "/backgrounds/hero2.mp4",
+    liveUrl: "https://zentrosolutions.co/"
   }
 ];

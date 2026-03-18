@@ -134,7 +134,7 @@ export default function CVPage() {
               <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Education</h2>
               <div>
                 <h3 className="text-lg font-semibold">Bachelor of Science in Artificial Intelligence</h3>
-                <p className="mt-1 text-sm text-gray-400">Graduated: April 2023</p>
+                <p className="mt-1 text-sm text-gray-400">Iqra University</p>
               </div>
             </section>
           </div>

@@ -6,6 +6,10 @@ import { Footer } from "@/components/layout/footer";
 import { siteConfig } from "@/lib/site";
 
 export function HomeContactGate() {
+  const handleOpenProjectForm = () => {
+    window.dispatchEvent(new Event("open-project-form"));
+  };
+
   return (
     <section id="contact" className="scroll-mt-24 h-screen overflow-hidden p-5">
       <div className="relative h-full overflow-hidden rounded-[2rem]">
@@ -46,12 +50,12 @@ export function HomeContactGate() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-6 grid grid-cols-2 gap-2 sm:flex sm:flex-row sm:gap-3">
                   <Link
                     href={siteConfig.socialLinks.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="header-pill pp-mono inline-flex h-[48px] items-center justify-center gap-3 px-5 text-[11px] uppercase tracking-[0.16em] text-[#111111]"
+                    className="header-pill pp-mono inline-flex h-[48px] items-center justify-center gap-2 px-3 text-[10px] uppercase tracking-[0.14em] text-[#111111] sm:gap-3 sm:px-5 sm:text-[11px] sm:tracking-[0.16em]"
                   >
                     <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
                       <path
@@ -59,14 +63,15 @@ export function HomeContactGate() {
                         d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.53 0 .2 5.34.2 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.33-1.66a11.9 11.9 0 0 0 5.74 1.47h.01c6.55 0 11.88-5.34 11.88-11.9 0-3.18-1.24-6.16-3.44-8.43Zm-8.44 18.31h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.76.99 1-3.67-.24-.38a9.86 9.86 0 0 1-1.52-5.24c0-5.45 4.43-9.88 9.88-9.88a9.8 9.8 0 0 1 6.98 2.9 9.81 9.81 0 0 1 2.9 6.98c0 5.45-4.43 9.89-9.83 9.89Zm5.42-7.4c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.97 1.18-.18.2-.36.22-.66.08-.3-.15-1.28-.47-2.43-1.5-.9-.8-1.5-1.79-1.68-2.1-.18-.3-.02-.46.13-.6.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.69-1.66-.94-2.28-.25-.6-.5-.52-.69-.53l-.58-.01c-.2 0-.53.08-.8.38-.28.3-1.07 1.05-1.07 2.56 0 1.5 1.1 2.96 1.25 3.16.15.2 2.16 3.3 5.23 4.63.73.31 1.3.5 1.75.64.74.23 1.42.2 1.95.12.6-.09 1.79-.73 2.04-1.44.25-.71.25-1.32.18-1.44-.08-.13-.28-.2-.58-.35Z"
                       />
                     </svg>
-                    Contact on WhatsApp
+                    <span className="hidden sm:inline">Contact on WhatsApp</span>
+                    <span className="sm:hidden">WhatsApp</span>
                   </Link>
 
                   <Link
                     href={siteConfig.socialLinks.telegram}
                     target="_blank"
                     rel="noreferrer"
-                    className="header-pill pp-mono inline-flex h-[48px] items-center justify-center gap-3 px-5 text-[11px] uppercase tracking-[0.16em] text-[#111111]"
+                    className="header-pill pp-mono inline-flex h-[48px] items-center justify-center gap-2 px-3 text-[10px] uppercase tracking-[0.14em] text-[#111111] sm:gap-3 sm:px-5 sm:text-[11px] sm:tracking-[0.16em]"
                   >
                     <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
                       <path
@@ -74,12 +79,27 @@ export function HomeContactGate() {
                         d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm5.894 8.218-1.97 9.29c-.149.66-.54.823-1.092.513l-3.021-2.227-1.457 1.402c-.161.161-.296.296-.607.296l.217-3.086 5.62-5.077c.244-.217-.054-.338-.378-.121l-6.948 4.374-2.994-.934c-.651-.203-.664-.651.136-.963l11.706-4.514c.542-.196 1.016.128.788 1.047Z"
                       />
                     </svg>
-                    Text on Telegram
+                    <span className="hidden sm:inline">Text on Telegram</span>
+                    <span className="sm:hidden">Telegram</span>
                   </Link>
+
+                  <button
+                    type="button"
+                    onClick={handleOpenProjectForm}
+                    className="pp-mono col-span-2 inline-flex h-[48px] w-full items-center justify-center gap-2 rounded-full bg-white/90 px-3 text-[10px] uppercase tracking-[0.14em] text-[#111111] transition-colors duration-300 hover:bg-[#FE5A37] hover:text-white sm:hidden"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
+                      <path d="M7 8.5h10" />
+                      <path d="M7 12h6.5" />
+                      <path d="M7 15.5h4" />
+                      <path d="M5 5h14v10a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+                    </svg>
+                    Contact Us
+                  </button>
                 </div>
               </div>
 
-              <form className="flex h-full items-center text-white">
+              <form className="hidden h-full items-center text-white lg:flex">
                 <div className="w-full space-y-7">
                   <div>
                     <label className="pp-mono mb-2.5 block text-[13px] uppercase tracking-[0.18em] text-white">

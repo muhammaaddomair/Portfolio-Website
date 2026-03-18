@@ -192,35 +192,97 @@ export function ServicesSkillsSection() {
             </div>
           </div>
 
-          <div className="px-6 py-5 md:px-10">
-            <div className="flex flex-wrap justify-center gap-2.5">
-              {serviceTabs.map((tab) => {
-                const isActive = tab.id === activeTab;
+            <div className="px-3 py-4 sm:px-6 sm:py-5 md:px-10">
+              <div className="space-y-1.5 sm:hidden">
+                <div className="grid grid-cols-3 gap-1.5">
+                  {serviceTabs.slice(0, 3).map((tab) => {
+                    const isActive = tab.id === activeTab;
 
-                return (
-                  <Button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    active={isActive}
-                    size="sm"
-                    className={cn("gap-2 px-3.5 py-2.5 normal-case tracking-normal", !isActive && "bg-[#f2ece4]")}
-                  >
-                    <div
-                      className={cn(
-                        "flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
-                        isActive
-                          ? "bg-[#ffe4dc] text-[#FE5A37]"
-                          : "bg-[#f3ece4] text-[#6f655c]"
-                      )}
+                    return (
+                      <Button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        active={isActive}
+                        size="sm"
+                        className={cn("min-w-0 gap-1 px-2 py-1.5 normal-case tracking-normal", !isActive && "bg-[#f2ece4]")}
+                      >
+                        <div
+                          className={cn(
+                            "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+                            isActive
+                              ? "bg-[#ffe4dc] text-[#FE5A37]"
+                              : "bg-[#f3ece4] text-[#6f655c]"
+                          )}
+                        >
+                          <span className="scale-75">
+                            <ServiceIcon kind={tab.icon} />
+                          </span>
+                        </div>
+                        <span className="max-w-[56px] truncate text-[10px] font-semibold tracking-[-0.03em]">{tab.label}</span>
+                      </Button>
+                    );
+                  })}
+                </div>
+
+                <div className="flex justify-center gap-1.5">
+                  {serviceTabs.slice(3).map((tab) => {
+                    const isActive = tab.id === activeTab;
+
+                    return (
+                      <Button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        active={isActive}
+                        size="sm"
+                        className={cn("min-w-[108px] gap-1 px-2 py-1.5 normal-case tracking-normal", !isActive && "bg-[#f2ece4]")}
+                      >
+                        <div
+                          className={cn(
+                            "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+                            isActive
+                              ? "bg-[#ffe4dc] text-[#FE5A37]"
+                              : "bg-[#f3ece4] text-[#6f655c]"
+                          )}
+                        >
+                          <span className="scale-75">
+                            <ServiceIcon kind={tab.icon} />
+                          </span>
+                        </div>
+                        <span className="max-w-[56px] truncate text-[10px] font-semibold tracking-[-0.03em]">{tab.label}</span>
+                      </Button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="hidden flex-wrap justify-center gap-2.5 sm:flex">
+                {serviceTabs.map((tab) => {
+                  const isActive = tab.id === activeTab;
+
+                  return (
+                    <Button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      active={isActive}
+                      size="sm"
+                      className={cn("gap-2 px-3.5 py-2.5 normal-case tracking-normal", !isActive && "bg-[#f2ece4]")}
                     >
-                      <ServiceIcon kind={tab.icon} />
-                    </div>
-                    <span className="truncate text-sm font-semibold tracking-[-0.02em] md:text-[15px]">{tab.label}</span>
-                  </Button>
-                );
-              })}
+                      <div
+                        className={cn(
+                          "flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors duration-300",
+                          isActive
+                            ? "bg-[#ffe4dc] text-[#FE5A37]"
+                            : "bg-[#f3ece4] text-[#6f655c]"
+                        )}
+                      >
+                        <ServiceIcon kind={tab.icon} />
+                      </div>
+                      <span className="truncate text-sm font-semibold tracking-[-0.02em] md:text-[15px]">{tab.label}</span>
+                    </Button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
 
           <div className="p-6 md:p-8">
             <motion.div
@@ -262,7 +324,7 @@ export function ServicesSkillsSection() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center md:pl-8">
+              <div className="hidden items-center justify-center md:pl-8 lg:flex">
                 <div className="relative w-full max-w-[320px] overflow-hidden rounded-[1.6rem] p-3 shadow-[0_22px_44px_rgba(17,17,17,0.08)]">
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[1.2rem]">
                     <Image

@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [projectFormOpen, setProjectFormOpen] = useState(false);
 
   useEffect(() => {
@@ -41,6 +42,18 @@ export function Header() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [projectFormOpen]);
+
+  useEffect(() => {
+    setMobileNavOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onOpenProjectForm = () => setProjectFormOpen(true);
+
+    window.addEventListener("open-project-form", onOpenProjectForm);
+
+    return () => window.removeEventListener("open-project-form", onOpenProjectForm);
+  }, []);
 
   return (
     <>
@@ -89,6 +102,35 @@ export function Header() {
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               type="button"
+              onClick={() => setMobileNavOpen((open) => !open)}
+              className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-white transition-colors duration-300 hover:border-[#FE5A37] hover:text-[#FE5A37] md:hidden"
+              aria-label={mobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileNavOpen}
+              aria-controls="mobile-header-nav"
+            >
+              <span className="flex h-4 w-5 flex-col justify-between">
+                <span
+                  className={cn(
+                    "block h-px w-full bg-current transition-transform duration-300",
+                    mobileNavOpen && "translate-y-[7px] rotate-45"
+                  )}
+                />
+                <span
+                  className={cn(
+                    "block h-px w-full bg-current transition-opacity duration-300",
+                    mobileNavOpen && "opacity-0"
+                  )}
+                />
+                <span
+                  className={cn(
+                    "block h-px w-full bg-current transition-transform duration-300",
+                    mobileNavOpen && "-translate-y-[7px] -rotate-45"
+                  )}
+                />
+              </span>
+            </button>
+            <button
+              type="button"
               className="header-pill pp-mono hidden gap-2 px-3 py-2.5 text-xs uppercase tracking-[0.14em] sm:inline-flex md:px-4 md:py-3 md:text-sm"
               aria-label="Select language"
             >
@@ -103,7 +145,7 @@ export function Header() {
                 </span>
               </span>
             </button>
-            <Button onClick={() => setProjectFormOpen(true)} className="gap-2 px-3 py-2.5 text-xs sm:gap-3 sm:px-5 sm:py-3 sm:text-sm">
+            <Button onClick={() => setProjectFormOpen(true)} className="hidden gap-2 px-3 py-2.5 text-xs sm:gap-3 sm:px-5 sm:py-3 sm:text-sm md:inline-flex">
               <span className="header-text-wrap">
                 <span className="header-text-track">
                   <span className="header-text-line">Start a Project</span>
@@ -118,6 +160,44 @@ export function Header() {
           </div>
         </div>
       </motion.header>
+
+      <AnimatePresence>
+        {mobileNavOpen ? (
+          <motion.div
+            id="mobile-header-nav"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            className="absolute left-3 right-3 top-[5.6rem] z-40 sm:left-5 sm:right-5 md:hidden"
+          >
+            <div className="rounded-[1.3rem] border border-white/10 bg-[rgba(28,20,18,0.92)] p-3 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-[22px]">
+              <nav className="flex flex-col">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileNavOpen(false)}
+                    className="pp-mono rounded-[0.95rem] px-4 py-3 text-sm uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:bg-white/5 hover:text-[#FE5A37]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileNavOpen(false);
+                    setProjectFormOpen(true);
+                  }}
+                  className="pp-mono rounded-[0.95rem] px-4 py-3 text-left text-sm uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:bg-white/5 hover:text-[#FE5A37]"
+                >
+                  Start a Project
+                </button>
+              </nav>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
 
       <AnimatePresence>
         {projectFormOpen ? (

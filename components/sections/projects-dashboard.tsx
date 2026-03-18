@@ -70,9 +70,9 @@ export function ProjectsDashboard() {
         </div>
 
         <Reveal delay={0.08} className="mt-12">
-          <div className="relative isolate z-10 mx-auto h-[740px] max-w-[1400px] overflow-hidden rounded-[2rem] border border-[rgba(255,255,255,0.08)] bg-[#050505] shadow-[0_40px_120px_rgba(0,0,0,0.55)]">
+          <div className="relative isolate z-10 mx-auto h-[90svh] max-w-[1400px] overflow-hidden rounded-[2rem] border border-[rgba(255,255,255,0.08)] bg-[#050505] shadow-[0_40px_120px_rgba(0,0,0,0.55)] md:h-[740px]">
             <div className="flex h-full min-h-0 flex-col overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.05),transparent_22%),linear-gradient(180deg,#0b0b0b_0%,#050505_100%)]">
-              <div className="flex items-center justify-between border-b border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] px-4 py-3 backdrop-blur-xl md:px-6 md:py-4">
+              <div className="flex items-center justify-between border-b border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] px-3 py-3 backdrop-blur-xl md:px-6 md:py-4">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -85,7 +85,7 @@ export function ProjectsDashboard() {
                 </div>
               </div>
 
-              <div className="border-b border-[rgba(255,255,255,0.08)] px-4 py-4 md:px-6">
+              <div className="hidden border-b border-[rgba(255,255,255,0.08)] px-4 py-4 md:block md:px-6">
                 <div className="flex flex-wrap justify-center gap-3 md:justify-start">
                   {projectCategories.map((category) => (
                     <Button
@@ -101,9 +101,38 @@ export function ProjectsDashboard() {
                 </div>
               </div>
 
-              <div className="grid min-h-0 flex-1 md:grid-cols-[340px,minmax(0,1fr)]">
+              <div className="flex min-h-0 flex-1 flex-col md:grid md:grid-cols-[340px,minmax(0,1fr)]">
+                <div className="p-3 md:hidden">
+                  <div className="grid grid-cols-4 gap-1.5">
+                    {filteredProjects.map((project) => {
+                      const isActive = project.id === activeProject.id;
+
+                      return (
+                        <Button
+                          key={project.id}
+                          onClick={() => setActiveProjectId(project.id)}
+                          active={isActive}
+                          fullWidth
+                          className={cn(
+                            "pointer-events-auto relative z-20 min-h-[44px] rounded-[0.8rem] border p-0 text-left normal-case tracking-normal",
+                            isActive
+                              ? "border-[#FE5A37] bg-transparent"
+                              : "border-[rgba(255,255,255,0.12)] bg-transparent hover:border-[rgba(254,90,55,0.55)]"
+                          )}
+                        >
+                          <div className="flex w-full items-center justify-center rounded-[calc(0.8rem-1px)] px-1.5 py-2 text-center">
+                            <p className={cn("text-[9px] font-semibold leading-3 tracking-[-0.02em]", isActive ? "text-white" : "text-[#f3eee6]")}>
+                              {project.title}
+                            </p>
+                          </div>
+                        </Button>
+                      );
+                    })}
+                  </div>
+                </div>
+
                 <aside className="min-h-0 border-b border-r border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.025)] md:border-b-0">
-                  <div className="flex h-full min-h-0 flex-col p-5 md:p-6">
+                  <div className="hidden h-full min-h-0 flex-col p-5 md:flex md:p-6">
                     <div className="min-h-0 flex-1 space-y-3 overflow-y-auto pr-2 [scrollbar-color:#FE5A37_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#FE5A37] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-[6px]">
                       {filteredProjects.map((project) => {
                         const isActive = project.id === activeProject.id;
@@ -133,7 +162,7 @@ export function ProjectsDashboard() {
                   </div>
                 </aside>
 
-                <div className="relative z-10 min-h-0 overflow-y-auto p-4 md:p-6 [scrollbar-color:#FE5A37_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#FE5A37] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-[6px]">
+                <div className="relative z-10 min-h-0 flex-1 overflow-y-auto p-3 md:p-6 [scrollbar-color:#FE5A37_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#FE5A37] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-[6px]">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeProject.id}
@@ -141,22 +170,22 @@ export function ProjectsDashboard() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -14 }}
                       transition={{ duration: 0.35, ease: "easeOut" }}
-                      className="space-y-6"
+                      className="space-y-3 md:space-y-6"
                     >
-                      <div className="rounded-[1.5rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] p-6 shadow-[0_18px_40px_rgba(10,15,31,0.28)] backdrop-blur-xl">
-                        <div className="flex flex-col gap-5">
+                      <div className="rounded-[1.2rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] p-3 shadow-[0_18px_40px_rgba(10,15,31,0.28)] backdrop-blur-xl md:rounded-[1.5rem] md:p-6">
+                        <div className="flex flex-col gap-4 md:gap-5">
                           <div className="max-w-2xl">
-                            <h3 className="text-3xl font-semibold text-white md:text-4xl">{activeProject.title}</h3>
-                            <p className="mt-3 text-base leading-7 text-[#d1d5db]">{activeProject.description}</p>
+                            <h3 className="text-xl font-semibold text-white md:text-4xl">{activeProject.title}</h3>
+                            <p className="mt-2 text-xs leading-5 text-[#d1d5db] md:mt-3 md:text-base md:leading-7">{activeProject.description}</p>
                           </div>
 
-                          <div className="space-y-4">
+                          <div className="space-y-3 md:space-y-4">
                             <p className="pp-mono text-[10px] uppercase tracking-[0.24em] text-[#d1d5db]/65">Technology Stack</p>
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap gap-2 md:gap-3">
                               {activeProject.techStack.map((tech) => (
                                 <div
                                   key={tech}
-                                  className="inline-flex items-center gap-3 rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] px-4 py-2.5"
+                                  className="inline-flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] px-3 py-2 md:gap-3 md:px-4 md:py-2.5"
                                 >
                                   {techLogos[tech] ? (
                                     <img
@@ -172,19 +201,19 @@ export function ProjectsDashboard() {
                                       {tech.slice(0, 1)}
                                     </span>
                                   )}
-                                  <span className="text-sm font-medium text-white">{tech}</span>
+                                  <span className="text-[11px] font-medium text-white md:text-sm">{tech}</span>
                                 </div>
                               ))}
                             </div>
                           </div>
 
-                          <div className="flex flex-wrap gap-3">
+                          <div className="flex flex-wrap gap-2 md:gap-3">
                             {previewHref ? (
                               <Button
                                 href={previewHref}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="pointer-events-auto relative z-20 px-6 py-3 normal-case tracking-normal"
+                                className="pointer-events-auto relative z-20 px-4 py-2.5 text-xs normal-case tracking-normal md:px-6 md:py-3 md:text-sm"
                               >
                                 Live Project
                               </Button>
@@ -193,7 +222,7 @@ export function ProjectsDashboard() {
                               href={repoHref}
                               target="_blank"
                               rel="noreferrer"
-                              className="pointer-events-auto relative z-20 px-6 py-3 normal-case tracking-normal"
+                              className="pointer-events-auto relative z-20 px-4 py-2.5 text-xs normal-case tracking-normal md:px-6 md:py-3 md:text-sm"
                             >
                               GitHub Repo
                             </Button>
@@ -206,34 +235,34 @@ export function ProjectsDashboard() {
                         transition={{ duration: 0.25, ease: "easeOut" }}
                         className="grid gap-4 md:grid-cols-[0.9fr,1.1fr]"
                       >
-                        <div className="rounded-[1.5rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.025)] p-5 shadow-[0_24px_60px_rgba(0,0,0,0.24)]">
+                        <div className="rounded-[1.2rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.025)] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.24)] md:rounded-[1.5rem] md:p-5">
                           <p className="pp-mono text-[10px] uppercase tracking-[0.24em] text-[#d1d5db]/65">Deployment Snapshot</p>
                           <div className="mt-5 space-y-4">
-                            <div className="rounded-[1.1rem] bg-[rgba(255,255,255,0.03)] p-4">
+                            <div className="rounded-[1rem] bg-[rgba(255,255,255,0.03)] p-3 md:rounded-[1.1rem] md:p-4">
                               <p className="text-[11px] uppercase tracking-[0.2em] text-[#d1d5db]/55">Client</p>
-                              <p className="mt-2 text-lg font-semibold text-white">{activeProject.client}</p>
+                              <p className="mt-2 text-base font-semibold text-white md:text-lg">{activeProject.client}</p>
                             </div>
-                            <div className="rounded-[1.1rem] bg-[rgba(255,255,255,0.03)] p-4">
+                            <div className="rounded-[1rem] bg-[rgba(255,255,255,0.03)] p-3 md:rounded-[1.1rem] md:p-4">
                               <p className="text-[11px] uppercase tracking-[0.2em] text-[#d1d5db]/55">Solution</p>
-                              <p className="mt-2 text-lg font-semibold text-white">{activeProject.solution}</p>
+                              <p className="mt-2 text-base font-semibold text-white md:text-lg">{activeProject.solution}</p>
                             </div>
-                            <div className="rounded-[1.1rem] bg-[rgba(255,255,255,0.03)] p-4">
+                            <div className="rounded-[1rem] bg-[rgba(255,255,255,0.03)] p-3 md:rounded-[1.1rem] md:p-4">
                               <p className="text-[11px] uppercase tracking-[0.2em] text-[#d1d5db]/55">Result</p>
-                              <p className="mt-2 text-lg font-semibold leading-7 text-white">{activeProject.result}</p>
+                              <p className="mt-2 text-base font-semibold leading-6 text-white md:text-lg md:leading-7">{activeProject.result}</p>
                             </div>
                           </div>
                         </div>
 
-                        <div className="rounded-[1.5rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.025)] p-5 shadow-[0_24px_60px_rgba(0,0,0,0.24)]">
+                        <div className="rounded-[1.2rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.025)] p-3 shadow-[0_24px_60px_rgba(0,0,0,0.24)] md:rounded-[1.5rem] md:p-5">
                           <p className="pp-mono text-[10px] uppercase tracking-[0.24em] text-[#d1d5db]/65">Key Capabilities</p>
-                          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                          <div className="mt-4 grid gap-2 md:mt-5 md:gap-3 sm:grid-cols-2">
                             {activeProject.features.map((feature, index) => (
                               <div
                                 key={feature}
-                                className="rounded-[1.1rem] bg-[rgba(255,255,255,0.03)] p-4"
+                                className="rounded-[1rem] bg-[rgba(255,255,255,0.03)] p-3 md:rounded-[1.1rem] md:p-4"
                               >
                                 <p className="text-[11px] uppercase tracking-[0.2em] text-[#d1d5db]/45">0{index + 1}</p>
-                                <p className="mt-3 text-base font-semibold leading-6 text-white">{feature}</p>
+                                <p className="mt-2 text-sm font-semibold leading-5 text-white md:mt-3 md:text-base md:leading-6">{feature}</p>
                               </div>
                             ))}
                           </div>

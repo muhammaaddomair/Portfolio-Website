@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site";
 export function HomeHero() {
   return (
     <section id="home" className="scroll-mt-24 p-3 sm:p-5">
-      <div className="relative min-h-[calc(100svh-24px)] overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_30px_80px_rgba(0,0,0,0.36)] sm:min-h-[calc(100svh-40px)] md:h-[calc(100vh-40px)]">
+      <div className="relative h-[calc(100svh-24px)] overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_30px_80px_rgba(0,0,0,0.36)] sm:h-[calc(100svh-40px)] md:h-[calc(100vh-40px)]">
         <Header />
         <motion.div
           variants={staggerContainer}
