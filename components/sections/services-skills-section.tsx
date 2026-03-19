@@ -42,7 +42,7 @@ const serviceTabs: ServiceTab[] = [
     description:
       "Custom web platforms, dashboards, SaaS systems, and scalable digital products designed for serious growth environments.",
     details: ["Product architecture", "User dashboards", "Billing-ready flows"],
-    image: "/service/service1-img.png",
+    image: "/images/image6.jfif",
     icon: "screen"
   },
   {
@@ -52,7 +52,7 @@ const serviceTabs: ServiceTab[] = [
     description:
       "Custom CMS systems and internal operational tools tailored to structured workflows, content governance, and team execution.",
     details: ["Admin systems", "Operational tooling", "Content workflows"],
-    image: "/service/service-img2.png",
+    image: "/images/image2.png",
     icon: "cms"
   },
   {
@@ -62,7 +62,7 @@ const serviceTabs: ServiceTab[] = [
     description:
       "Cross-platform desktop software and executable applications engineered for real operations, internal tooling, and controlled environments.",
     details: ["Windows executables", "Cross-platform tools", "Workflow software"],
-    image: "/images/imac-png.png",
+    image: "/images/image3.svg",
     icon: "desktop"
   },
   {
@@ -72,7 +72,7 @@ const serviceTabs: ServiceTab[] = [
     description:
       "API architecture, database systems, cloud deployment, and scalable backend infrastructure built for reliability and long-term maintenance.",
     details: ["APIs and services", "Database architecture", "Deployment systems"],
-    image: "/images/imac-png.png",
+    image: "/images/image5.avif",
     icon: "backend"
   },
   {
@@ -82,7 +82,7 @@ const serviceTabs: ServiceTab[] = [
     description:
       "Automation pipelines, AI-powered tools, workflow engines, and intelligent integrations that remove friction and create leverage.",
     details: ["Workflow engines", "Automation pipelines", "AI integrations"],
-    image: "/images/imac-png.png",
+    image: "/images/image4.avif",
     icon: "automation"
   }
 ];
@@ -182,7 +182,7 @@ export function ServicesSkillsSection() {
                   </span>
                   Services & Capabilities
                 </div>
-                <h2 className="mt-6 text-5xl font-semibold tracking-[-0.05em] text-[#111111] md:text-7xl">Our Services.</h2>
+                <h2 className="mt-6 text-5xl font-semibold tracking-[-0.05em] text-[#111111] md:text-7xl">Services I Offer.</h2>
                 <p className="mx-auto mt-6 max-w-3xl text-sm uppercase leading-7 tracking-[0.08em] text-[#666666] md:text-base">
                   Systems I design and build across SaaS platforms, CMS systems, desktop software, automation tools,
                   and backend infrastructure.

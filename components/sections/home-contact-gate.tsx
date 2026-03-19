@@ -34,8 +34,8 @@ export function HomeContactGate() {
                 </h2>
 
                 <p className="mt-3 max-w-[440px] text-[14px] leading-5 text-white">
-                  Ready to elevate your digital presence? Office105 partners with teams to plan, design, and build
-                  experiences that perform and scale.
+                  Need a sharper website, a stronger product system, or an AI-powered workflow? I help businesses turn
+                  ideas into polished digital experiences that perform and scale.
                 </p>
 
                 <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
