@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -54,9 +55,15 @@ export function Footer({ embedded = false }: FooterProps) {
     <div className="rounded-[1.3rem] border border-white/10 bg-[rgba(28,20,18,0.82)] px-4 py-4 text-white shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-[22px] sm:px-5 md:px-8 md:py-5">
       <div className="relative flex min-h-[72px] flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center justify-between gap-3 md:justify-start">
-          <div className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-base font-semibold">
-              M
+          <div className="flex items-center gap-3 sm:gap-4">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 sm:h-14 sm:w-14">
+              <Image
+                src="/images/logo.png"
+                alt={`${siteConfig.name} logo`}
+                width={88}
+                height={88}
+                className="h-16 w-16 object-contain sm:h-20 sm:w-20"
+              />
             </span>
             <div>
               <p className="text-base font-semibold tracking-tight">{siteConfig.name}</p>

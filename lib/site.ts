@@ -11,7 +11,7 @@ export const siteConfig = {
   tagline:
     "Designing scalable software platforms, infrastructure systems, and intelligent automation solutions for modern businesses.",
   email: "muhammaddomair@gmail.com",
-  phone: "+92 302 23155638",
+  phone: "+92 302 3155638",
   socialLinks: {
     github: "https://github.com/muhammaaddomair",
     linkedin: "https://www.linkedin.com/in/muhammaddomair",
@@ -19,7 +19,7 @@ export const siteConfig = {
     x: "https://x.com/muhammaddomair",
     fiverr: "#",
     upwork: "#",
-    whatsapp: "https://wa.me/9230223155638",
+    whatsapp: "https://wa.me/923023155638",
     telegram: "https://t.me/+9230223155638"
   }
 };

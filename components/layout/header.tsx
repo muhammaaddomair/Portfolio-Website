@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -72,9 +73,16 @@ export function Header() {
               : "border-white/10 bg-[rgba(28,20,18,0.58)] shadow-[0_18px_60px_rgba(0,0,0,0.18)] backdrop-blur-[22px]"
           )}
         >
-          <Link href="/" className="flex min-w-0 items-center gap-3 text-white">
-            <span className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5 text-base sm:h-10 sm:w-10 sm:text-lg">
-              M
+          <Link href="/" className="flex min-w-0 items-center gap-3 text-white sm:gap-4">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 sm:h-14 sm:w-14">
+              <Image
+                src="/images/logo.png"
+                alt={`${siteConfig.name} logo`}
+                width={88}
+                height={88}
+                className="h-16 w-16 object-contain sm:h-20 sm:w-20"
+                priority
+              />
             </span>
             <div className="min-w-0">
               <div className="truncate text-base font-semibold tracking-tight sm:text-lg md:text-xl">{siteConfig.name}</div>
