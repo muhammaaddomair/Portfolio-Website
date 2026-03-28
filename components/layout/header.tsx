@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { ContactForm } from "@/components/forms/contact-form";
 import { Button } from "@/components/ui/button";
 import { navItems, siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -248,44 +249,7 @@ export function Header() {
                 </button>
               </div>
 
-              <form className="mt-6 sm:mt-8">
-                <div className="grid gap-6">
-                  <div>
-                    <input
-                      type="text"
-                      className="h-12 w-full rounded-[1rem] border border-white/12 bg-white/5 px-4 text-[15px] text-white outline-none transition-all duration-300 placeholder:text-white/42 focus:border-[#FE5A37] focus:bg-white/8 sm:h-14"
-                      placeholder="Your Name"
-                    />
-                  </div>
-
-                  <div>
-                    <input
-                      type="email"
-                      className="h-12 w-full rounded-[1rem] border border-white/12 bg-white/5 px-4 text-[15px] text-white outline-none transition-all duration-300 placeholder:text-white/42 focus:border-[#FE5A37] focus:bg-white/8 sm:h-14"
-                      placeholder="Your Email"
-                    />
-                  </div>
-
-                  <div>
-                    <textarea
-                      rows={5}
-                      className="w-full rounded-[1rem] border border-white/12 bg-white/5 px-4 py-4 text-[15px] text-white outline-none transition-all duration-300 placeholder:text-white/42 focus:border-[#FE5A37] focus:bg-white/8"
-                      placeholder="Your Message"
-                    />
-                  </div>
-
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-sm text-white/48 sm:max-w-[55%]">Responses usually begin with a focused project conversation.</p>
-                    <Button type="submit" className="h-11 w-full whitespace-nowrap gap-3 px-5 py-2 text-sm sm:w-auto">
-                      Send Inquiry
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
-                        <path d="M5 12h12" />
-                        <path d="m13 7 5 5-5 5" />
-                      </svg>
-                    </Button>
-                  </div>
-                </div>
-              </form>
+              <ContactForm variant="overlay" onSuccess={() => setProjectFormOpen(false)} />
             </motion.div>
           </motion.div>
         ) : null}

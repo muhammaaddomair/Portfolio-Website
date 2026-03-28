@@ -3,7 +3,7 @@ export type ProjectCategory =
   | "SaaS Platforms"
   | "Website Development"
   | "AI Automation"
-  | "Infrastructure"
+  | "Machine Learning Models"
   | "Data Systems";
 
 export type ProjectItem = {
@@ -27,7 +27,7 @@ export const projectCategories: ProjectCategory[] = [
   "SaaS Platforms",
   "Website Development",
   "AI Automation",
-  "Infrastructure",
+  "Machine Learning Models",
   "Data Systems"
 ];
 
@@ -110,9 +110,24 @@ export const projects: ProjectItem[] = [
     repoUrl: "https://github.com/muhammaaddomair/United-Agencies-karachi-Erp-App"
   },
   {
+    id: "employee-management-payroll-tool",
+    title: "Employee Management Payroll Tool",
+    category: "AI Automation",
+    subtitle: "Desktop Payroll & Payslip Automation App",
+    description:
+      "A desktop payroll tool for managing employee records, generating professional payslip PDFs for selected employees and months, saving payslip data locally in SQLite, and emailing generated PDFs directly to employees through configured SMTP settings.",
+    client: "Internal Product Build",
+    solution: "Desktop payroll management and payslip automation",
+    result: "Streamlined employee payroll processing, local payslip record storage, and direct PDF delivery from one app",
+    techStack: ["Desktop App", "SQLite", "SMTP", "PDF Generation"],
+    features: ["Employee record management", "Payslip PDF generation by employee and month", "SQLite storage with direct employee email delivery"],
+    image: "/backgrounds/hero1.mp4",
+    repoUrl: "https://github.com/muhammaaddomair/Employee-Management"
+  },
+  {
     id: "retinal-ai-screening-platform",
     title: "Retinal AI Screening Platform",
-    category: "AI Automation",
+    category: "Machine Learning Models",
     subtitle: "Diabetic Retinopathy Analysis System",
     description:
       "An AI-driven retinal image analysis platform for diabetic retinopathy screening, severity classification, biomarker extraction, and explainable visual interpretation through an interactive Streamlit interface.",

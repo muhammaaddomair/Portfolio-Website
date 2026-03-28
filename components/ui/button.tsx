@@ -17,6 +17,7 @@ type ButtonProps = {
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
   target?: string;
   rel?: string;
+  disabled?: boolean;
 };
 
 const sizeClasses = {
@@ -51,7 +52,8 @@ export function Button({
   onClick,
   type = "button",
   target,
-  rel
+  rel,
+  disabled = false
 }: ButtonProps) {
   const classes = cn(
     "header-pill pp-mono inline-flex items-center justify-center overflow-hidden uppercase tracking-[0.14em] transition-all duration-300 hover:-translate-y-0.5",
@@ -88,6 +90,7 @@ export function Button({
       transition={{ duration: 0.22, ease: "easeOut" }}
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={classes}
     >
       {content}

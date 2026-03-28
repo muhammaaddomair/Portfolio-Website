@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ContactForm } from "@/components/forms/contact-form";
 import { Footer } from "@/components/layout/footer";
 import { siteConfig } from "@/lib/site";
 
@@ -99,55 +100,7 @@ export function HomeContactGate() {
                 </div>
               </div>
 
-              <form className="hidden h-full items-center text-white lg:flex">
-                <div className="w-full space-y-7">
-                  <div>
-                    <label className="pp-mono mb-2.5 block text-[13px] uppercase tracking-[0.18em] text-white">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full border-b border-white/55 bg-transparent pb-3 text-[15px] outline-none transition-all duration-300 focus:border-[#FE5A37]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="pp-mono mb-2.5 block text-[13px] uppercase tracking-[0.18em] text-white">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full border-b border-white/55 bg-transparent pb-3 text-[15px] outline-none transition-all duration-300 focus:border-[#FE5A37]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="pp-mono mb-2.5 block text-[13px] uppercase tracking-[0.18em] text-white">
-                      Your Message
-                    </label>
-                    <textarea
-                      rows={2}
-                      className="w-full resize-none border-b border-white/55 bg-transparent pb-3 text-[15px] outline-none transition-all duration-300 focus:border-[#FE5A37]"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="header-pill pp-mono inline-flex h-[50px] w-full items-center justify-between gap-4 px-6 text-[12px] uppercase tracking-[0.16em] text-[#111111]"
-                  >
-                    <span className="header-text-wrap">
-                      <span className="header-text-track">
-                        <span className="header-text-line">Send Message</span>
-                        <span className="header-text-line">Send Message</span>
-                      </span>
-                    </span>
-                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
-                      <path d="M5 12h12" />
-                      <path d="m13 7 5 5-5 5" />
-                    </svg>
-                  </button>
-                </div>
-              </form>
+              <ContactForm variant="inline" />
             </div>
           </div>
 
