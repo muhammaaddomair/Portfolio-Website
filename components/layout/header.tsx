@@ -157,8 +157,8 @@ export function Header() {
             <Button onClick={() => setProjectFormOpen(true)} className="hidden gap-2 px-3 py-2.5 text-xs sm:gap-3 sm:px-5 sm:py-3 sm:text-sm md:inline-flex">
               <span className="header-text-wrap">
                 <span className="header-text-track">
-                  <span className="header-text-line">Start a Project</span>
-                  <span className="header-text-line">Start a Project</span>
+                  <span className="header-text-line">Hire Me</span>
+                  <span className="header-text-line">Hire Me</span>
                 </span>
               </span>
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
@@ -200,7 +200,7 @@ export function Header() {
                   }}
                   className="pp-mono rounded-[0.95rem] px-4 py-3 text-left text-sm uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:bg-white/5 hover:text-[#FE5A37]"
                 >
-                  Start a Project
+                  Hire Me
                 </button>
               </nav>
             </div>
@@ -227,7 +227,7 @@ export function Header() {
             >
               <div className="flex items-start justify-between gap-4 sm:gap-6">
                 <div>
-                  <p className="pp-mono text-[11px] uppercase tracking-[0.22em] text-white/55">Start a Project</p>
+                  <p className="pp-mono text-[11px] uppercase tracking-[0.22em] text-white/55">Hire Me</p>
                   <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl md:text-4xl">
                     Let&apos;s talk about what you&apos;re building.
                   </h2>

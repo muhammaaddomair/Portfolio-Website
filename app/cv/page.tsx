@@ -1,8 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { projects } from "@/data/projects";
 import { siteConfig } from "@/lib/site";
+
+const coreExpertise = [
+  {
+    title: "Systems & Backend Engineering",
+    items: "Node.js, REST APIs, scalable architecture, server-side systems"
+  },
+  {
+    title: "Frontend & Product Development",
+    items: "React, Next.js, TypeScript"
+  },
+  {
+    title: "Infrastructure & Delivery",
+    items: "Linux servers, VPS deployment, PM2, SMTP systems, Postfix"
+  },
+  {
+    title: "AI Systems (Applied)",
+    items: "RAG pipelines, LangChain workflows, LLM integrations"
+  },
+  {
+    title: "Automation & Workflows",
+    items: "Business process automation, API integrations, internal tools"
+  }
+];
 
 const experienceItems = [
   {
@@ -10,11 +32,11 @@ const experienceItems = [
     company: "PrimeHive Digital",
     period: "July 2024 - Present",
     points: [
-      "Designed and shipped full-stack web applications across frontend, backend, and operational workflows.",
-      "Built automation services and internal tooling that improved business process efficiency.",
-      "Developed REST APIs and scalable backend integrations for production systems.",
-      "Worked closely with stakeholders to convert business needs into durable technical architecture.",
-      "Improved deployment reliability, application performance, and production readiness."
+      "Designed and deployed full-stack systems across frontend, backend, and operational workflows",
+      "Built internal automation tools improving business efficiency and reducing manual processes",
+      "Developed scalable REST APIs and backend services for production use",
+      "Translated business requirements into system architecture and technical execution",
+      "Improved deployment stability, performance, and system reliability"
     ]
   },
   {
@@ -22,45 +44,62 @@ const experienceItems = [
     company: "Codup",
     period: "February 2024 - August 2024",
     points: [
-      "Worked on LLM-enabled systems with a focus on prompt design, orchestration, and applied AI delivery.",
-      "Implemented LangChain pipelines for structured multi-step AI workflows.",
-      "Designed RAG systems using vector retrieval and context-aware generation.",
-      "Integrated AI features into backend products and service layers through APIs.",
-      "Optimized AI-assisted product flows for practical real-world usage."
+      "Built LLM-powered systems using structured prompt workflows and orchestration",
+      "Developed RAG pipelines with vector retrieval and context-aware generation",
+      "Integrated AI capabilities into backend services via APIs",
+      "Optimized AI workflows for practical product usage and performance"
     ]
   }
 ];
 
-const skillGroups = [
+const selectedProjects = [
   {
-    title: "Full Stack",
-    items: "React, Next.js, Node.js, Express.js, MongoDB, REST APIs"
+    title: "Axemail - Bulk Email Infrastructure System",
+    summary: "Self-hosted high-volume email delivery system running on VPS architecture",
+    points: [
+      "Designed system capable of sending large-scale outbound email campaigns",
+      "Implemented Postfix-based delivery with full operational control",
+      "Built API layer for managing sending workflows and system control"
+    ]
   },
   {
-    title: "AI & LLM",
-    items: "LangChain, RAG, Vector Databases, LLaMA, Prompt Engineering"
+    title: "Pharmaceutical ERP System",
+    summary: "End-to-end ERP platform for business operations",
+    points: [
+      "Centralized inventory, sales, procurement, and production workflows",
+      "Built scalable backend architecture for operational visibility",
+      "Designed system to improve coordination and business efficiency"
+    ]
   },
   {
-    title: "Automation",
-    items: "Backend Automation, Workflow Design, API Integration"
+    title: "Business Automation Suite (Payroll & Billing Systems)",
+    summary: "Desktop-based operational tools for small businesses",
+    points: [
+      "Automated invoice and payslip PDF generation",
+      "Implemented local data storage using SQLite",
+      "Integrated SMTP-based email delivery for documents",
+      "Used in real business environments for daily operations"
+    ]
   },
   {
-    title: "Web & CMS",
-    items: "WordPress, Elementor, Performance Optimization"
-  },
-  {
-    title: "Tools",
-    items: "Git, GitHub, Postman, Deployment Platforms"
-  },
-  {
-    title: "Core Strengths",
-    items: "Clean Architecture, Scalable Systems, Product Thinking"
+    title: "Lead Management & Outreach System (SaaS Architecture)",
+    summary: "Product-style lead management and campaign tracking platform",
+    points: [
+      "Built CMS dashboard for managing leads and campaigns",
+      "Implemented bulk sending workflow and real-time tracking system",
+      "Designed scalable architecture for outreach automation"
+    ]
   }
 ];
 
+const strengths = [
+  "System architecture and backend design",
+  "Building software for real business workflows",
+  "Automation and operational efficiency",
+  "Product-focused engineering mindset"
+];
+
 export default function CVPage() {
-  const retinalProject = projects.find((project) => project.id === "retinal-ai-screening-platform");
-  const clientWebsiteProjects = projects.filter((project) => project.category === "Website Development");
   const handlePrint = () => {
     window.print();
   };
@@ -87,10 +126,15 @@ export default function CVPage() {
         </section>
 
         <section className="text-center">
-          <h1 className="text-3xl font-bold tracking-[-0.04em] sm:text-4xl md:text-5xl">{siteConfig.name}</h1>
-          <p className="mt-3 text-base text-gray-400 sm:text-lg">{siteConfig.title}</p>
+          <h1 className="text-3xl font-bold tracking-[-0.04em] sm:text-4xl md:text-5xl">Muhammad Omair</h1>
+          <p className="mt-3 text-base text-gray-400 sm:text-lg">
+            Backend Systems Engineer - Automation Architect - SaaS Builder
+          </p>
           <p className="mt-3 text-sm leading-6 text-gray-500 sm:leading-7">
-            DHA Phase 2, Karachi • {siteConfig.phone} • {siteConfig.email}
+            Karachi, Pakistan - {siteConfig.phone} -{" "}
+            <Link href={`mailto:${siteConfig.email}`} className="text-[#FE5A37] underline underline-offset-4">
+              {siteConfig.email}
+            </Link>
           </p>
         </section>
 
@@ -99,14 +143,26 @@ export default function CVPage() {
             <section className="space-y-4">
               <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Summary</h2>
               <p className="leading-7 text-gray-300">
-                Full Stack and AI Engineer with hands-on experience building scalable web applications, intelligent
-                automation systems, and LLM-enabled products across agency, freelance, and internal delivery
-                environments.
+                Backend-focused systems engineer specializing in building scalable business software, automation
+                platforms, and SaaS-style applications.
               </p>
               <p className="leading-7 text-gray-300">
-                My work spans frontend platforms, backend services, AI pipelines, and operational software with a focus
-                on clean architecture, performance, and business usefulness.
+                Experienced in designing and deploying production systems including ERP platforms, bulk email
+                infrastructure, and operational tools used by real businesses. Strong focus on system architecture,
+                performance, and solving practical business problems through software.
               </p>
+            </section>
+
+            <section className="space-y-5">
+              <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Core Expertise</h2>
+              <div className="grid gap-5">
+                {coreExpertise.map((group) => (
+                  <div key={group.title}>
+                    <h3 className="text-base font-semibold text-white">{group.title}</h3>
+                    <p className="mt-2 leading-7 text-gray-300">{group.items}</p>
+                  </div>
+                ))}
+              </div>
             </section>
 
             <section className="space-y-5">
@@ -117,11 +173,30 @@ export default function CVPage() {
                     <div className="flex flex-col gap-1">
                       <h3 className="text-xl font-semibold">{item.role}</h3>
                       <p className="text-sm text-[#FE5A37]">
-                        {item.company} • {item.period}
+                        {item.company} - {item.period}
                       </p>
                     </div>
                     <ul className="mt-4 list-disc list-inside space-y-2 text-gray-300">
                       {item.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          <div className="space-y-12">
+            <section className="space-y-5">
+              <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Selected Projects</h2>
+              <div className="space-y-8">
+                {selectedProjects.map((project) => (
+                  <div key={project.title}>
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                    <p className="mt-1 text-sm text-gray-400">{project.summary}</p>
+                    <ul className="mt-4 list-disc list-inside space-y-2 text-gray-300">
+                      {project.points.map((point) => (
                         <li key={point}>{point}</li>
                       ))}
                     </ul>
@@ -137,111 +212,22 @@ export default function CVPage() {
                 <p className="mt-1 text-sm text-gray-400">Iqra University</p>
               </div>
             </section>
-          </div>
 
-          <div className="space-y-12">
-            <section className="space-y-5">
-              <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Projects</h2>
-
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold">Retinal Disease Detection System</h3>
-                  <p className="mt-1 text-sm text-gray-400">
-                    {retinalProject?.subtitle}
-                    {retinalProject?.liveUrl ? (
-                      <>
-                        {" "}•{" "}
-                        <Link
-                          href={retinalProject.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-[#FE5A37] underline underline-offset-4"
-                        >
-                          Live Link
-                        </Link>
-                      </>
-                    ) : null}
-                  </p>
-                  <ul className="mt-4 list-disc list-inside space-y-2 text-gray-300">
-                    <li>Built an AI retinal image analysis workflow for diabetic retinopathy screening.</li>
-                    <li>Implemented real-time severity classification with explainable Grad-CAM outputs.</li>
-                    <li>Added biomarker extraction and visual interpretation inside one interactive application.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold">AI Recipe & Nutrition Generator</h3>
-                  <ul className="mt-4 list-disc list-inside space-y-2 text-gray-300">
-                    <li>Built a recipe and nutrition generation workflow driven by intelligent retrieval and AI prompting.</li>
-                    <li>Implemented semantic search and context-aware generation for ingredient-based responses.</li>
-                    <li>Designed the system for practical user-facing recommendations and scalable feature growth.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-semibold">Client Websites & Business Platforms</h3>
-                  <p className="mt-2 text-sm text-gray-400">
-                    {clientWebsiteProjects.map((project, index) => {
-                      let hostname = project.liveUrl ?? "";
-
-                      try {
-                        hostname = project.liveUrl ? new URL(project.liveUrl).hostname.replace(/^www\./, "") : "";
-                      } catch {
-                        hostname = project.liveUrl ?? "";
-                      }
-
-                      return project.liveUrl ? (
-                        <span key={project.id}>
-                          {index > 0 ? " | " : null}
-                          <Link
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-[#FE5A37] underline underline-offset-4"
-                          >
-                            {hostname}
-                          </Link>
-                        </span>
-                      ) : null;
-                    })}
-                    {" | "}
-                    <Link
-                      href="https://impactvanguard.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[#FE5A37] underline underline-offset-4"
-                    >
-                      impactvanguard.com
-                    </Link>
-                    {" | "}
-                    <Link
-                      href="https://safztech.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[#FE5A37] underline underline-offset-4"
-                    >
-                      safztech.com
-                    </Link>
-                  </p>
-                  <ul className="mt-4 list-disc list-inside space-y-2 text-gray-300">
-                    <li>Developed business and product websites using modern frontend architecture and strong UX framing.</li>
-                    <li>Built sites for medical billing, legal services, AI products, and brand positioning.</li>
-                    <li>Focused on responsiveness, conversion pathways, clarity of messaging, and performance.</li>
-                  </ul>
-                </div>
-              </div>
+            <section className="space-y-4">
+              <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Additional Work</h2>
+              <p className="leading-7 text-gray-300">
+                Developed multiple business and product websites across industries including medical, legal, and AI
+                platforms, focusing on performance, UX, and conversion optimization.
+              </p>
             </section>
 
             <section className="space-y-5">
-              <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Skills</h2>
-              <div className="grid gap-5 sm:grid-cols-2">
-                {skillGroups.map((group) => (
-                  <div key={group.title}>
-                    <h3 className="text-base font-semibold text-white">{group.title}</h3>
-                    <p className="mt-2 leading-7 text-gray-300">{group.items}</p>
-                  </div>
+              <h2 className="border-b border-white/10 pb-2 text-2xl font-semibold">Strengths</h2>
+              <ul className="list-disc list-inside space-y-2 text-gray-300">
+                {strengths.map((strength) => (
+                  <li key={strength}>{strength}</li>
                 ))}
-              </div>
+              </ul>
             </section>
           </div>
         </div>

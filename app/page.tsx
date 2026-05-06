@@ -8,9 +8,9 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <ProjectsDashboard />
       <ServicesSkillsSection />
       <AboutSection />
-      <ProjectsDashboard />
       <HomeContactGate />
     </>
   );

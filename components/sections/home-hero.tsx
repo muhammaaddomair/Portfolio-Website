@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/ui/container";
 import { staggerContainer, fadeUp } from "@/lib/animations";
 import { siteConfig } from "@/lib/site";
 
@@ -38,32 +37,34 @@ export function HomeHero() {
                   className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white"
                 >
                   <span>[</span>
-                  Digital Systems Architect
+                  Backend Systems, Automation & SaaS Development
                   <span>]</span>
                 </motion.p>
                 <motion.h1
                   variants={fadeUp}
                   className="mt-6 text-4xl font-semibold uppercase leading-[0.92] tracking-[-0.04em] text-white sm:text-5xl md:mt-8 md:text-7xl"
                 >
-                  Systems
+                  Business Systems
                   <br />
                   That Scale
                 </motion.h1>
                 <motion.p variants={fadeUp} className="mt-6 max-w-xl text-base leading-7 text-white sm:text-lg sm:leading-8 md:mt-8">
-                  {siteConfig.name} designs high-leverage digital platforms, backend systems, and automation architecture
-                  for companies that need technical authority, clarity, and execution at a premium level.
+                  I build scalable backend systems, automation tools, and SaaS platforms that solve real business
+                  problems for companies that need reliable software.
                 </motion.p>
                 <motion.div variants={fadeUp} className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
                   <Button href="/#projects" className="w-full justify-center sm:w-auto">
-                    View Projects
+                    View My Work
                   </Button>
                   <Button href="/cv" className="w-full justify-center !bg-[#FE5A37] !text-white hover:!bg-white hover:!text-[#111111] sm:w-auto">
                     View My Resume
                   </Button>
                 </motion.div>
-                <motion.p variants={fadeUp} className="mt-14 text-sm font-medium text-white sm:mt-20 md:mt-24">
-                  Scroll for more
-                </motion.p>
+                <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3 text-sm font-medium text-white sm:mt-12">
+                  <span>Real systems in production</span>
+                  <span>Used by small businesses</span>
+                  <span>VPS-based scalable architecture</span>
+                </motion.div>
               </div>
             </div>
             <motion.div variants={fadeUp} className="hidden lg:block" />

@@ -29,14 +29,14 @@ export function HomeContactGate() {
 
               <div className="flex max-w-[540px] flex-col justify-center gap-5">
                 <h2 className="text-[36px] font-semibold leading-[0.96] tracking-[-0.04em] text-white md:text-[52px]">
-                  LET&apos;S ALIGN ON YOUR
+                  READY TO BUILD
                   <br />
-                  NEXT LAUNCH
+                  YOUR SYSTEM?
                 </h2>
 
                 <p className="mt-3 max-w-[440px] text-[14px] leading-5 text-white">
-                  Need a sharper website, a stronger product system, or an AI-powered workflow? I help businesses turn
-                  ideas into polished digital experiences that perform and scale.
+                  I work with businesses that need custom software, automation, or backend infrastructure. Send a
+                  message and we can map the simplest path from workflow problem to production system.
                 </p>
 
                 <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -68,26 +68,10 @@ export function HomeContactGate() {
                     <span className="sm:hidden">WhatsApp</span>
                   </Link>
 
-                  <Link
-                    href={siteConfig.socialLinks.telegram}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="header-pill pp-mono inline-flex h-[48px] items-center justify-center gap-2 px-3 text-[10px] uppercase tracking-[0.14em] text-[#111111] sm:gap-3 sm:px-5 sm:text-[11px] sm:tracking-[0.16em]"
-                  >
-                    <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
-                      <path
-                        fill="#229ED9"
-                        d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm5.894 8.218-1.97 9.29c-.149.66-.54.823-1.092.513l-3.021-2.227-1.457 1.402c-.161.161-.296.296-.607.296l.217-3.086 5.62-5.077c.244-.217-.054-.338-.378-.121l-6.948 4.374-2.994-.934c-.651-.203-.664-.651.136-.963l11.706-4.514c.542-.196 1.016.128.788 1.047Z"
-                      />
-                    </svg>
-                    <span className="hidden sm:inline">Text on Telegram</span>
-                    <span className="sm:hidden">Telegram</span>
-                  </Link>
-
                   <button
                     type="button"
                     onClick={handleOpenProjectForm}
-                    className="pp-mono col-span-2 inline-flex h-[48px] w-full items-center justify-center gap-2 rounded-full bg-white/90 px-3 text-[10px] uppercase tracking-[0.14em] text-[#111111] transition-colors duration-300 hover:bg-[#FE5A37] hover:text-white sm:hidden"
+                    className="pp-mono inline-flex h-[48px] w-full items-center justify-center gap-2 rounded-full bg-white/90 px-3 text-[10px] uppercase tracking-[0.14em] text-[#111111] transition-colors duration-300 hover:bg-[#FE5A37] hover:text-white sm:hidden"
                   >
                     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
                       <path d="M7 8.5h10" />
@@ -95,7 +79,21 @@ export function HomeContactGate() {
                       <path d="M7 15.5h4" />
                       <path d="M5 5h14v10a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
                     </svg>
-                    Contact Us
+                    Contact Me
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleOpenProjectForm}
+                    className="pp-mono hidden h-[48px] items-center justify-center gap-2 rounded-full bg-white/90 px-5 text-[11px] uppercase tracking-[0.16em] text-[#111111] transition-colors duration-300 hover:bg-[#FE5A37] hover:text-white sm:inline-flex"
+                  >
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
+                      <path d="M7 8.5h10" />
+                      <path d="M7 12h6.5" />
+                      <path d="M7 15.5h4" />
+                      <path d="M5 5h14v10a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+                    </svg>
+                    Contact Me
                   </button>
                 </div>
               </div>

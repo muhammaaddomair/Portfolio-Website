@@ -213,3 +213,51 @@ textarea::placeholder {
   width: max-content;
   animation: logo-marquee 28s linear infinite;
 }
+
+.invoice-sheet {
+  width: 210mm;
+  height: 297mm;
+}
+
+.invoice-cell {
+  padding: 0.45rem 0.35rem;
+  word-break: break-word;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .invoice-page-shell,
+  .invoice-page-shell * {
+    visibility: visible;
+  }
+
+  .invoice-controls {
+    display: none !important;
+  }
+
+  .invoice-page-shell {
+    min-height: auto !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+
+  .invoice-sheet {
+    margin: 0 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

@@ -1,15 +1,15 @@
 export const navItems = [
   { href: "/#home", label: "Home" },
-  { href: "/#about", label: "About" },
   { href: "/#projects", label: "Projects" },
+  { href: "/#about", label: "Process" },
   { href: "/#contact", label: "Contact" }
 ];
 
 export const siteConfig = {
   name: "Muhammad Omair",
-  title: "Digital Systems Architect & Automation Engineer",
+  title: "Full-Stack Developer for Backend Systems, Automation Tools, and SaaS Platforms",
   tagline:
-    "Designing scalable software platforms, infrastructure systems, and intelligent automation solutions for modern businesses.",
+    "Full-stack developer specializing in ERP systems, email infrastructure, and business automation tools used by real companies.",
   email: "muhammaddomair@gmail.com",
   phone: "+92 302 3155638",
   socialLinks: {

@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
-import { projectCategories, projects, type ProjectCategory } from "@/data/projects";
+import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -33,13 +33,12 @@ const techLogos: Record<string, string> = {
   "scikit-image": "https://cdn.simpleicons.org/scikitlearn/F7931E"
 };
 
+const showcaseProjectIds = ["axemail-platform", "pharma-erp-system", "business-automation-suite", "leadfloxos"];
+const showcaseProjects = projects.filter((project) => showcaseProjectIds.includes(project.id));
+
 export function ProjectsDashboard() {
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All Projects");
-  const filteredProjects = useMemo(
-    () => (activeCategory === "All Projects" ? projects : projects.filter((p) => p.category === activeCategory)),
-    [activeCategory]
-  );
-  const [activeProjectId, setActiveProjectId] = useState(projects[0].id);
+  const [activeProjectId, setActiveProjectId] = useState(showcaseProjects[0].id);
+  const filteredProjects = useMemo(() => showcaseProjects, []);
 
   const activeProject =
     filteredProjects.find((project) => project.id === activeProjectId) ?? filteredProjects[0] ?? projects[0];
@@ -59,12 +58,12 @@ export function ProjectsDashboard() {
         <div className="space-y-7 text-center md:space-y-10">
           <Reveal>
             <h2 className="pp-mono text-3xl font-black uppercase text-black sm:text-4xl md:text-6xl">
-              Explore Projects
+              Project Showcase
             </h2>
           </Reveal>
           <Reveal delay={0.04}>
             <p className="mx-auto max-w-3xl text-lg leading-8 text-black">
-              A refined project dashboard built as a premium dark showcase for selected product and systems work.
+              Product-focused systems built for SaaS, infrastructure, enterprise operations, and business automation.
             </p>
           </Reveal>
         </div>
@@ -80,30 +79,14 @@ export function ProjectsDashboard() {
                 </div>
                 <div className="hidden items-center gap-3 md:flex">
                   <span className="pp-mono rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-[#d1d5db]">
-                    Premium Project Dashboard
+                    Client-Ready Systems
                   </span>
-                </div>
-              </div>
-
-              <div className="hidden border-b border-[rgba(255,255,255,0.08)] px-4 py-4 md:block md:px-6">
-                <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-                  {projectCategories.map((category) => (
-                    <Button
-                      key={category}
-                      onClick={() => setActiveCategory(category)}
-                      active={activeCategory === category}
-                      size="sm"
-                      className="pointer-events-auto relative z-20 px-4 py-2 text-xs font-medium normal-case tracking-normal md:text-sm"
-                    >
-                      {category}
-                    </Button>
-                  ))}
                 </div>
               </div>
 
               <div className="flex min-h-0 flex-1 flex-col md:grid md:grid-cols-[340px,minmax(0,1fr)]">
                 <div className="p-3 md:hidden">
-                  <div className="grid grid-cols-4 gap-1.5">
+                  <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-4">
                     {filteredProjects.map((project) => {
                       const isActive = project.id === activeProject.id;
 
@@ -175,12 +158,19 @@ export function ProjectsDashboard() {
                       <div className="rounded-[1.2rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] p-3 shadow-[0_18px_40px_rgba(10,15,31,0.28)] backdrop-blur-xl md:rounded-[1.5rem] md:p-6">
                         <div className="flex flex-col gap-4 md:gap-5">
                           <div className="max-w-2xl">
-                            <h3 className="text-xl font-semibold text-white md:text-4xl">{activeProject.title}</h3>
+                            <div className="flex flex-wrap items-center gap-3">
+                              <h3 className="text-xl font-semibold text-white md:text-4xl">{activeProject.title}</h3>
+                              {activeProject.status ? (
+                                <span className="pp-mono rounded-full border border-[#FE5A37]/35 bg-[#FE5A37]/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-[#ffb6a6]">
+                                  {activeProject.status}
+                                </span>
+                              ) : null}
+                            </div>
                             <p className="mt-2 text-xs leading-5 text-[#d1d5db] md:mt-3 md:text-base md:leading-7">{activeProject.description}</p>
                           </div>
 
                           <div className="space-y-3 md:space-y-4">
-                            <p className="pp-mono text-[10px] uppercase tracking-[0.24em] text-[#d1d5db]/65">Technology Stack</p>
+                            <p className="pp-mono text-[10px] uppercase tracking-[0.24em] text-[#d1d5db]/65">Build Foundation</p>
                             <div className="flex flex-wrap gap-2 md:gap-3">
                               {activeProject.techStack.map((tech) => (
                                 <div
@@ -215,7 +205,7 @@ export function ProjectsDashboard() {
                                 rel="noreferrer"
                                 className="pointer-events-auto relative z-20 px-4 py-2.5 text-xs normal-case tracking-normal md:px-6 md:py-3 md:text-sm"
                               >
-                                Live Project
+                                View Architecture
                               </Button>
                             ) : null}
                             <Button
@@ -224,7 +214,7 @@ export function ProjectsDashboard() {
                               rel="noreferrer"
                               className="pointer-events-auto relative z-20 px-4 py-2.5 text-xs normal-case tracking-normal md:px-6 md:py-3 md:text-sm"
                             >
-                              GitHub Repo
+                              View Code
                             </Button>
                           </div>
                         </div>

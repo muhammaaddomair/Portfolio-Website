@@ -18,6 +18,7 @@ export type ProjectItem = {
   techStack: string[];
   features: string[];
   image: string;
+  status?: "Completed" | "Ongoing";
   liveUrl?: string;
   repoUrl?: string;
 };
@@ -33,17 +34,33 @@ export const projectCategories: ProjectCategory[] = [
 
 export const projects: ProjectItem[] = [
   {
+    id: "leadfloxos",
+    title: "LeadFloxOS",
+    category: "SaaS Platforms",
+    subtitle: "Lead Management Operating System",
+    description:
+      "An ongoing SaaS platform for organizing lead workflows, sales operations, and business growth systems from one focused operating layer.",
+    client: "Internal Product Build",
+    solution: "Lead management and sales workflow platform",
+    result: "Ongoing build focused on cleaner lead tracking, pipeline visibility, and operational control",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js"],
+    features: ["Lead pipeline management", "Sales workflow organization", "Scalable SaaS foundation"],
+    image: "/backgrounds/hero2.mp4",
+    status: "Ongoing",
+    repoUrl: "https://github.com/muhammaaddomair/LeadFloxOS"
+  },
+  {
     id: "axemail-platform",
     title: "Axemail Platform",
     category: "SaaS Platforms",
-    subtitle: "Self-Hosted Bulk Email Platform",
+    subtitle: "High-Volume Email Delivery System",
     description:
-      "A self-hosted bulk email platform running on my own VPS server, built to reliably send more than 300,000 emails per day with full operational control.",
+      "Self-hosted email infrastructure built on Postfix and VPS architecture, capable of large-scale outbound delivery with full operational control.",
     client: "Internal Build",
     solution: "Self-hosted bulk email infrastructure",
-    result: "High-volume outbound delivery on controlled infrastructure",
+    result: "300,000+ emails/day capability on controlled server infrastructure",
     techStack: ["Linux", "Postfix", "REST API", "Contabo", "PM2", "Next.js"],
-    features: ["High-volume sending", "Self-hosted delivery", "Operational control"],
+    features: ["300,000+ emails/day capability", "Self-hosted delivery pipeline", "Full server-level control with Postfix and Linux"],
     image: "/portfolio-images/axemail-img.png",
     liveUrl: "https://axemail.cloud",
     repoUrl: "https://github.com/muhammaaddomair/axemail-sender"
@@ -98,16 +115,32 @@ export const projects: ProjectItem[] = [
     id: "pharma-erp-system",
     title: "Pharmaceutical ERP System",
     category: "Data Systems",
-    subtitle: "Ongoing Business Operations Platform",
+    subtitle: "Enterprise Business Management System",
     description:
-      "An ongoing ERP platform for a pharmaceutical import, export, and manufacturing company, built to unify inventory, sales, purchasing, billing, production, and operational reporting in one system.",
+      "Centralized ERP system for inventory, sales, procurement, billing, and production workflows in a pharmaceutical operations environment.",
     client: "Pharmaceutical Operations",
     solution: "End-to-end ERP workflow centralization",
-    result: "Ongoing implementation focused on improving visibility, coordination, and operational efficiency",
+    result: "Unified operations across inventory, sales, procurement, billing, and production",
     techStack: ["React", "Node.js", "TypeScript"],
-    features: ["Inventory and stock movement management", "Sales billing and customer workflows", "Procurement and production tracking"],
+    features: ["Unified business operations", "Inventory, sales, and production tracking", "Designed for real pharmaceutical workflows"],
     image: "/backgrounds/hero1.mp4",
+    liveUrl: "/invoice-generator",
     repoUrl: "https://github.com/muhammaaddomair/United-Agencies-karachi-Erp-App"
+  },
+  {
+    id: "business-automation-suite",
+    title: "Business Automation Suite",
+    category: "AI Automation",
+    subtitle: "Internal Business Automation Tools",
+    description:
+      "Desktop-based automation systems for billing, payroll, invoice generation, customer management, local records, and direct email delivery.",
+    client: "Small Business Operations",
+    solution: "Billing, payroll, and customer workflow automation",
+    result: "Invoice, payslip, storage, and email workflows moved into practical daily-use tools",
+    techStack: ["Python", "Tkinter", "SQLite3", "SMTP", "PDF Generation"],
+    features: ["Invoice and payslip PDF generation", "SQLite local storage system", "SMTP email automation used in real shop operations"],
+    image: "/portfolio-images/salon-invoice-system-img.png",
+    repoUrl: "https://github.com/muhammaaddomair/Salon-Invoice-App"
   },
   {
     id: "employee-management-payroll-tool",

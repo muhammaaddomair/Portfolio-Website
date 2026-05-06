@@ -8,18 +8,14 @@ import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
 const techLogos = [
-  { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-  { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-  { name: "Framer", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg" },
   { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-  { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-  { name: "Redis", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-  { name: "Prisma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" },
-  { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-  { name: "Linux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" }
+  { name: "REST APIs", logo: "https://cdn.simpleicons.org/fastapi/009688" },
+  { name: "Linux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+  { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "SQLite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+  { name: "Postfix", logo: "https://cdn.simpleicons.org/maildotru/168DE2" }
 ];
 
 const marqueeLogos = [...techLogos, ...techLogos];
@@ -36,54 +32,44 @@ type ServiceTab = {
 
 const serviceTabs: ServiceTab[] = [
   {
-    id: "saas",
-    label: "SaaS Platforms",
-    title: "Web Platforms & SaaS Applications",
-    description:
-      "Custom web platforms, dashboards, SaaS systems, and scalable digital products designed for serious growth environments.",
-    details: ["Product architecture", "User dashboards", "Billing-ready flows"],
-    image: "/images/image6.jfif",
-    icon: "screen"
-  },
-  {
-    id: "cms",
-    label: "CMS Systems",
-    title: "CMS & Business Systems",
-    description:
-      "Custom CMS systems and internal operational tools tailored to structured workflows, content governance, and team execution.",
-    details: ["Admin systems", "Operational tooling", "Content workflows"],
-    image: "/images/image2.png",
-    icon: "cms"
-  },
-  {
-    id: "desktop",
-    label: "Desktop Apps",
-    title: "Desktop & Executable Applications",
-    description:
-      "Cross-platform desktop software and executable applications engineered for real operations, internal tooling, and controlled environments.",
-    details: ["Windows executables", "Cross-platform tools", "Workflow software"],
-    image: "/images/image3.svg",
-    icon: "desktop"
-  },
-  {
     id: "backend",
-    label: "Infrastructure",
-    title: "Backend & Infrastructure Systems",
+    label: "Backend",
+    title: "Backend Systems",
     description:
-      "API architecture, database systems, cloud deployment, and scalable backend infrastructure built for reliability and long-term maintenance.",
-    details: ["APIs and services", "Database architecture", "Deployment systems"],
+      "Node.js services, REST APIs, workflow logic, and backend architecture for software that needs to run real business processes.",
+    details: ["Node.js", "REST APIs", "Linux servers"],
     image: "/images/image5.avif",
     icon: "backend"
   },
   {
-    id: "automation",
-    label: "AI Automation",
-    title: "AI & Automation Systems",
+    id: "frontend",
+    label: "Frontend",
+    title: "Frontend Applications",
     description:
-      "Automation pipelines, AI-powered tools, workflow engines, and intelligent integrations that remove friction and create leverage.",
-    details: ["Workflow engines", "Automation pipelines", "AI integrations"],
+      "React, Next.js, and TypeScript interfaces for dashboards, SaaS products, admin panels, and client-facing business tools.",
+    details: ["React", "Next.js", "TypeScript"],
+    image: "/images/image6.jfif",
+    icon: "screen"
+  },
+  {
+    id: "infrastructure",
+    label: "Infrastructure",
+    title: "Infrastructure",
+    description:
+      "VPS hosting, PM2 process management, Postfix, SMTP systems, and production deployment foundations with operational control.",
+    details: ["VPS hosting", "PM2", "Postfix and SMTP"],
     image: "/images/image4.avif",
     icon: "automation"
+  },
+  {
+    id: "database",
+    label: "Database",
+    title: "Database Design",
+    description:
+      "Relational data structures, SQLite-backed desktop tools, records management, reporting flows, and practical storage design.",
+    details: ["SQLite", "Relational design", "Local storage systems"],
+    image: "/images/image3.svg",
+    icon: "desktop"
   }
 ];
 
@@ -180,12 +166,12 @@ export function ServicesSkillsSection() {
                       <path d="M6 10v8h8" />
                     </svg>
                   </span>
-                  Services & Capabilities
+                  Technical Expertise
                 </div>
-                <h2 className="mt-6 text-5xl font-semibold tracking-[-0.05em] text-[#111111] md:text-7xl">Services I Offer.</h2>
+                <h2 className="mt-6 text-5xl font-semibold tracking-[-0.05em] text-[#111111] md:text-7xl">Capability-Based Stack.</h2>
                 <p className="mx-auto mt-6 max-w-3xl text-sm uppercase leading-7 tracking-[0.08em] text-[#666666] md:text-base">
-                  Systems I design and build across SaaS platforms, CMS systems, desktop software, automation tools,
-                  and backend infrastructure.
+                  I keep the stack practical: backend systems, focused frontend interfaces, controlled infrastructure,
+                  and relational storage that supports daily operations.
                 </p>
               </div>
 
@@ -313,7 +299,7 @@ export function ServicesSkillsSection() {
 
                 <div className="mt-10">
                   <Button href="/#contact" className="gap-3 px-6 py-3 normal-case tracking-normal">
-                    Let&apos;s Chat
+                    Discuss a System
                     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.9">
                       <path d="M7 8.5h10" />
                       <path d="M7 12h6.5" />
@@ -353,7 +339,7 @@ export function ServicesSkillsSection() {
         className="mt-8 w-full overflow-hidden py-6"
       >
         <div className="mb-5 px-5 text-center md:px-6">
-          <p className="pp-mono text-[11px] uppercase tracking-[0.28em] text-[#8b8175]">Technologies I Work With</p>
+          <p className="pp-mono text-[11px] uppercase tracking-[0.28em] text-[#8b8175]">Core Tools I Work With</p>
         </div>
 
         <div className="logo-marquee">
