@@ -1,0 +1,2 @@
+import "@/features/reference-projects/feature.css";
+export default function CaseStudyLayout({children}: {children: React.ReactNode}) {return <div className="reference-projects case-study-shell">{children}</div>;}

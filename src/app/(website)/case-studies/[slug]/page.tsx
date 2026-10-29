@@ -1,0 +1,1 @@
+export {default, generateMetadata, generateStaticParams} from "@/features/reference-projects/app/(website)/case-studies/[slug]/page";

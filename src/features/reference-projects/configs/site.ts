@@ -1,0 +1,1 @@
+export const site = { name: "Muhammad Omair", title: "Muhammad Omair | AI Automation & Web Developer", description: "AI automation and web development case studies.", url: "http://localhost:3000", configured: false, socialImage: "/reference-projects/images/projects/project-01.webp" }; export const absoluteUrl = (path: string) => new URL(path, site.url).toString();

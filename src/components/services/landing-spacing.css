@@ -1,0 +1,47 @@
+/* Shared content spacing, based on Skills to Projects. */
+#landing-page { --landing-section-gap:224px; --landing-half-gap:112px; }
+#landing-page > section:first-child {min-height:0;padding-bottom:var(--landing-half-gap);}
+#landing-page > #solutions {padding-block:var(--landing-half-gap);}
+#landing-page > #solutions > div {padding-block:0;}
+#landing-page > section[aria-labelledby="services-title"] {padding-top:var(--landing-half-gap);padding-bottom:var(--landing-half-gap);}
+#landing-page .reference-projects #projects {padding-top:var(--landing-half-gap);padding-bottom:0;}
+#landing-page > section[aria-labelledby="process-title"] {margin-top:0;padding-top:var(--landing-section-gap);background:#fff;}
+#landing-page > section[aria-labelledby="process-title"] > div {padding-top:0;padding-bottom:var(--landing-section-gap);}
+body:has(#landing-page) footer > .page-layout {padding-top:224px;}
+@media(max-width:640px){
+ #landing-page {--landing-section-gap:152px;--landing-half-gap:76px;}
+ body:has(#landing-page) footer > .page-layout {padding-top:152px;}
+}
+
+/* Reserve the animation footprint so the hero never changes size during its loop. */
+#hero .chatgpt-input-field {height:112px !important;min-height:112px !important;padding-top:16px !important;}
+#hero .chatgpt-execution-panel {height:180px;min-height:180px;max-height:180px !important;padding-top:16px !important;padding-bottom:16px !important;flex-shrink:0;}
+
+/* Turbulent ink clouds are visual only and never affect hero dimensions. */
+#hero .hero-ink-background {position:absolute;inset:-8%;width:116%;height:116%;z-index:-1;pointer-events:none;background:#f5f8ff;}
+#hero::after {content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 38%,rgba(255,255,255,.5),rgba(255,255,255,.08) 68%),linear-gradient(180deg,transparent 65%,#fff 100%);}
+
+#hero .hero-smoke-stream {animation:hero-smoke-left 9s linear infinite;will-change:transform;}
+@keyframes hero-smoke-left {from {transform:translateX(0);} to {transform:translateX(-1800px);}}
+@media(prefers-reduced-motion:reduce){#hero .hero-smoke-stream {animation:none;will-change:auto;}}
+
+#landing-page > #cta-card {padding-top:var(--landing-section-gap);}
+
+/* The reference portrait composition controls its own spacing. */
+#landing-page > #hero {padding-top:20px;padding-bottom:20px;}
+@media(max-width:760px){#landing-page > #hero{padding-top:20px;padding-bottom:70px;}}
+
+#hero::after{display:none;}
+
+/* Balance the project section and use the monochrome hero button treatment. */
+#landing-page .reference-projects #projects {padding-top:var(--landing-half-gap);padding-bottom:var(--landing-half-gap);}
+#landing-page #projects header [data-slot="button"] {background:#191919;color:#fff;}
+#landing-page #projects header [data-slot="button"]:hover {background:#353535;}
+
+#landing-page {background:#fff;}
+#landing-page > #cta-card,body:has(#landing-page) footer {border-top:0;border-bottom:0;}
+
+/* Leave room for the card shadow to fade before the footer paints. */
+#landing-page > #cta-card {padding-bottom:64px;}
+body:has(#landing-page) footer > .page-layout {padding-top:160px;}
+@media(max-width:640px){body:has(#landing-page) footer > .page-layout {padding-top:88px;}}

@@ -1,0 +1,1 @@
+export {default, generateMetadata} from "@/features/reference-projects/app/(website)/case-studies/page";

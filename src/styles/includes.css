@@ -1,0 +1,13 @@
+.bg-glass {
+  background: rgba(255, 240, 240, 0.12);
+
+  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px);
+}
+
+.bg-dark-glass {
+  background: rgba(8, 10, 18, 0.82);
+
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(90px);
+}
