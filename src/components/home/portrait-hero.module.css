@@ -1,4 +1,4 @@
-.hero {position:relative;isolation:isolate;overflow:hidden;background:#f6f6f6;color:#191919;min-height:calc((100svh - 76px) * .95);padding:20px 3vw;}
+.hero {position:relative;isolation:isolate;overflow:hidden;background:#ffffff;color:#191919;min-height:calc((100svh - 76px) * .95);padding:20px 3vw;}
 .layout {display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.2fr);align-items:center;gap:6vw;max-width:1536px;margin:0 auto;min-height:calc((100svh - 104px) * .95);}
 .portrait {position:relative;z-index:1;align-self:center;display:flex;justify-content:center;min-width:0;}
 .portrait img {display:block;width:100%;max-width:456px;height:auto;max-height:calc((100svh - 104px) * .95);object-fit:contain;object-position:center;mix-blend-mode:normal;}

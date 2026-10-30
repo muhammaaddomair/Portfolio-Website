@@ -13,8 +13,8 @@ export default function PortraitHero() {
           <h1 id="portrait-hero-title">Turning Vision Into<br className={styles.desktopBreak} /> Reality With Code<br className={styles.desktopBreak} /> And Design.</h1>
           <p>As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js and web development.</p>
           <div className={styles.actions}>
-            <a className={styles.resume} href="mailto:muhammaddomair@gmail.com?subject=Resume%20request">Resume <ArrowUpRight size={19} aria-hidden="true" /></a>
-            <a className={styles.contact} href="#contact">Contact</a>
+            <a className={styles.resume} href="#projects">Explore My Work <ArrowUpRight size={19} aria-hidden="true" /></a>
+            <a className={styles.contact} href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammaddomair%40gmail.com">Contact</a>
           </div>
         </div>
       </div>

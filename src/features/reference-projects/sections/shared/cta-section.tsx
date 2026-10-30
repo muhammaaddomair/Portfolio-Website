@@ -7,7 +7,7 @@ import { useGlobalContext } from "@/features/reference-projects/contexts/global-
 import { Button } from "@/features/reference-projects/components/ui/button";
 
 import { ArrowUpRight } from "lucide-react";
-import ctaImage from "../../public/images/cta-background.png";
+import ctaImage from "../../public/images/cta-background-black.png";
 
 function CTASection() {
   const { setConnectModal } = useGlobalContext();
@@ -55,6 +55,7 @@ function CTASection() {
           <Button
             onClick={() => setConnectModal(true)}
             type="button"
+            style={{ backgroundColor: "#000000", color: "#ffffff" }}
             className="mt-7 h-auto min-h-12.5 gap-3 rounded-[10px] bg-primary px-6 py-3 text-base leading-normal font-bold text-primary-foreground hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring sm:mt-8"
           >
             Tell Me About It

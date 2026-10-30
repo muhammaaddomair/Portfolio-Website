@@ -1,4 +1,4 @@
-.header{border:0;box-shadow:none;position:relative;z-index:50;width:100%;background:#f6f6f6;color:#191919;font-family:var(--font-manrope),sans-serif;}
+.header{border:0;box-shadow:none;position:relative;z-index:50;width:100%;background:#ffffff;color:#191919;font-family:var(--font-manrope),sans-serif;}
 .bar{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:76px;max-width:1680px;margin:auto;padding:7px 28px;}
 .nav{display:flex;align-items:center;gap:30px;}
 .nav a{position:relative;color:#191919;font-size:16px;font-weight:500;text-decoration:none;white-space:nowrap;}

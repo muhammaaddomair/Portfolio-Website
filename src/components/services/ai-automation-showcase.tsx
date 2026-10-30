@@ -1,8 +1,9 @@
-import { TopAutomationHero } from "@/components/home/top-automation-hero";
+import AboutMeSection from "@/components/home/about-me-section";
+
 import PortraitHero from "@/components/home/portrait-hero";
 import "./landing-spacing.css";
 import CTASection from "@/features/reference-projects/sections/shared/cta-section";
-import { ProcessSection } from "@/components/home/process-section";
+
 import { ProjectShowcaseSection } from "@/components/home/project-showcase-section";
 import { ServicesSection } from "@/components/home/services-section";
 import { type CSSProperties } from "react";
@@ -236,9 +237,11 @@ export function AiAutomationShowcase() {
 
 
       <ServicesSection />
-      <ProcessSection />
 
-      <TopAutomationHero />
+
+
+
+      <AboutMeSection />
 
       <div id="cta-card" className="reference-projects">
         <CTASection />
